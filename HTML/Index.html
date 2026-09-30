@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gama Delivery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="area-navegacao">
+            <img class="logo" src="logo.png" alt="logo do site" width="100px">
+        </nav>
+    </header>
+    
+    <main>
+        <article class="area-banner" id="Home">
+            <section id="banner">
+                <img src="banner.jpg" alt="Banner Principal" id="banner__image">
+            </section>
+            <section id="contactar">
+                <h2 id="contactar__titulo">Contacte Entregadores, bons, pagos, profissionais, sucedidos e bem pagos na semana disponível</h2>
+                <button id="contactar__botao">Contactar Entregadores</button>
+            </section>
+        </article>
+
+        <article class="area-sobre">
+            <section class="sobre">
+                <h1 class="sobre__titulo">Conheça o Gama Delivery</h1>
+                <p class="sobre__texto">Prezados e Prezadas clientes, para quem não me conhece, sou o Gama Delivery, seu novo aplicativo</p>
+            </section>
+            <section>
+                <img class="foto" src="sobre.jpg" alt="Sobre o Gama Delivery">
+            </section>
+        </article>
+
+        <article class="area-busca">
+            <h2 class="catalogo-titulo">Praças de Alimentação</h2>
+            <form class="busca">
+                <input type="text" class="busca__campo" placeholder="O que você procura hoje?">
+                <button class="busca__botao" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </article>
+
+        <article class="pracas_de_alimentacao" id="pracas_de_alimentacao">
+            <h2>Praças de alimentação</h2>
+        </article>
+
+        <div class="restaurantes" id="Campo-dos-restaurantes">
+            <aside class="restaurantes">...Buscando Restaurantes próximos de você. <a href="restaurantes.html">Ver restaurantes</a> </aside>
+        </div>
+        <div class="cafeterias" id="Campo-das-cafeterias">
+            <aside class="cafeterias">...Buscando Cafeterias próximas de você. <a href="cafeterias.html">Ver cafeterias</a> </aside>
+        </div>
+        <div class="padarias" id="Campo-das-padarias">
+            <aside class="padarias">...Buscando padarias próximas de você. <a href="padarias.html">Ver padarias</a> </aside>
+        </div>
+        <div class="pizzarias" id="Campo-dos-pizzarias">
+            <aside class="pizzarias">...Buscando pizzarias próximas de você. <a href="pizzarias.html">Ver pizzarias</a> </aside>
+        </div>
+        <div class="hamburguerias" id="Campo-das-hamburguerias">
+            <aside class="hamburguerias">...Buscando hamburguerias próximas de você. <a href="hamburguerias.html">Ver hamburguerias</a> </aside>
+        </div>
+        <div class="churrascarias" id="Campo-das-churrascarias">
+            <!-- DICA: Corrigido o texto do link para 'Ver churrascarias' -->
+            <aside class="churrascarias">...Buscando churrascarias próximas de você. <a href="churrascarias.html">Ver churrascarias</a> </aside>
+        </div>
+        <div class="food_trucks" id="Campo-dos-food_trucks">
+            <aside class="food_trucks">...Buscando food trucks próximos de você <a href="food_trucks.html">Ver quiosques</a> </aside>
+        </div>
+        <div class="pastelarias" id="Campo-das-pastelarias">
+            <aside class="pastelarias">...Buscando pastelarias próximas de você <a href="pastelarias.html">Ver pastelarias</a> </aside>
+        </div>
+        <div class="quiosques" id="Campo-das-quiosques">
+            <aside class="quiosques">...Buscando quiosques próximos de você. <a href="quiosques.html">Ver quiosques</a> </aside>
+        </div>
+    </main>
+
+    <script src="js/Carrinho.js"></script>
+    <script src="js/busca.js"></script>
+</body>
+</html>
