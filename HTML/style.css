@@ -1,6 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --cor-primaria: darkgreen;
+    --cor-secundaria: green;
+    --cor-fundo: white;
+    --cor-texto: #000;
+}
 
 *{
-    margin:  ;
-    padding:  ;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+}
+ul {
+    list-style: none;
+    display: flex;
+}
+li{
+    text-decoration: none;
+    color: var(--cor-texto);
+    padding: 10px 15px;
+}
+.icones {
+    display: flex;
+    gap: 10px;
+}
+.icones a {
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+.icones a:hover {
+    color: var(--cor-primaria);
+}
+.icones i {
+    font-size: 20px;
+}
+.icones i:hover {
+    color: var(--cor-primaria);
+}   
+main {
+    padding: 20px;
+}
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.area-busca {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.area-busca input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 5px 0 0 5px;
+}
+.area-busca button {
+    padding: 10px 20px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.area-busca button:hover {
+    background-color: var(--cor-secundaria);
+}
+.area-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    padding: 10px 20px;
+}
+.area-navegacao a {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: bold;
+}
+.area-navegacao a:hover {
+    color: var(--cor-primaria);
+}
+.aside{
+    padding: 20px;
+    background-color: var(--cor-fundo);
+}
+div {
+    margin-bottom: 20px;
 }

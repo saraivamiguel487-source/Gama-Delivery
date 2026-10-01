@@ -5,7 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const categorias = [
         { elemento: document.getElementById("Campo-dos-restaurantes"), termo: "restaurantes" },
         { elemento: document.getElementById("Campo-das-cafeterias"), termo: "cafeterias" },
-        { elemento: document.getElementById("Campo-das-padarias"), termo: "padarias" }
+        { elemento: document.getElementById("Campo-das-padarias"), termo: "padarias" },
+        { elemento: document.getElementById("Campo-das-pizzarias"), termo: "pizzarias" },
+        { elemento: document.getElementById("Campo-dos-hamburguerias"), termo: "hamburguerias" },
+        { elemento: document.getElementById("Campo-dos-churrascarias"), termo: "churrascarias" },
+        { elemento: document.getElementById("Campo-dos-Food-Trucks"), termo: "food trucks" },
+        { elemento: document.getElementById("Campo-dos-pastelarias"), termo: "pastelarias" },
+        { elemento: document.getElementById("Campo-dos-quiosques"), termo: "quiosques" }
     ];
 
    

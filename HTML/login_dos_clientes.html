@@ -4,33 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login_dos_clientes.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Login dos clientes do Gama Delivery</title>
 </head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+        --cor-primaria: darkgreen;
+        --cor-secundaria: green;
+        --cor-fundo: white;
+        --cor-texto: #000;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    nav.area-navegacao {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 20px;
+    }
+
+    nav.area-navegacao ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav.area-navegacao li {
+        padding: 10px 15px;
+    }
+
+    .icones {
+        display: flex;
+        gap: 10px;
+        color: var(--cor-texto);
+        text-decoration: none;
+    }
+
+    .icones:hover {
+        color: var(--cor-primaria);
+    }
+
+    .icones i {
+        font-size: 20px;
+    }
+
+    main.area-cadastro {
+        padding: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .area-titulo {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .area-acesso {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .titulo-campo {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .titulo-campo input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .area-botao {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .area-botao button {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--cor-primaria);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .area-botao button:hover {
+        background-color: var(--cor-secundaria);
+    }
+
+    .link-login {
+        color: var(--cor-secundaria);
+        text-decoration: none;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .link-login:hover {
+        text-decoration: underline;
+    }
+</style>
+
 <body>
     <header>
-        <nav class="area-navegação">
+        <nav class="area-navegacao">
             <img class="logo" src="" alt="logo do site" width="100px">
             <ul>
                 <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i></a></li>
-                <li><a class="icones" href="#Comidas"><i class="fa solid fa-"></i></a></li>
+                <li><a class="icones" href="comidas.html"><i class="fa-solid fa-utensils"></i></a></li>
+                <li><a class="icones" href="acompanhamentos_na_comida.html"><i class="fa-solid fa-store"></i></a></li>
+                <li><a class="icones" href="quiosques.html"><i class="fa-solid fa-store"></i></a></li>
                 <li><a class="icones" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a class="icones" href="login.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a class="icones" href="login_dos_clientes.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a class="icones" href="login_dos_entregadores.html"><i class="fa-solid fa-motorcycle"></i></a></li>
             </ul>
         </nav>
     </header>
 
     <main class="area-cadastro">
-        <section class="area-titulo formatacao">
+        <section class="area-titulo">
             <h1>Login do Gama Delivery</h1>
         </section>
-        <section class="area-formulario formatacao">
+
+        <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-logar">
-                <div class="area-acesso formatacao">
+                <div class="area-acesso">
                     <div class="email titulo-campo">
                         <label for="email">E-mail:</label>
                         <input type="email" id="email" placeholder="digite o seu e-mail" required>
@@ -41,20 +171,14 @@
                     </div>
                 </div>
 
-
-                <div class="area-botao formatacao">
-                    <button type="submit" id="botao-cadastrar">
-
-                        Entrar
-
-                    </button>
+                <div class="area-botao">
+                    <button type="submit" id="botao-cadastrar">Entrar</button>
                     <a href="#" class="link-login">Esqueceu a sua senha? Clique aqui!</a>
-                    <a href="Cadastro_dos_clientes.html" class="link-login">Ainda não possui uma conta? Clique aqui para
-                        cadastrar-se!</a>
+                    <a href="Cadastro_dos_clientes.html" class="link-login">Ainda não possui uma conta? Clique aqui para cadastrar-se!</a>
                 </div>
-
             </form>
-
+        </section>
+    </main>
 </body>
 
 </html>

@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const valor = email.value.trim();
 
     if (valor === "") {
-      definirStatus(email, false, "O e-mail da food truck é obrigatório.");
+      // AJUSTE: Correção gramatical na mensagem ("do food truck")
+      definirStatus(email, false, "O e-mail do food truck é obrigatório.");
       return false;
     } else if (!regexEmail.test(valor)) {
       definirStatus(email, false, "Digite um e-mail válido.");
@@ -64,35 +65,45 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.value = value;
   });
 
+  // CORREÇÃO 1: Máscara incremental do CNPJ corrigida pelo tamanho do texto
   cnpj.addEventListener("input", (e) => {
     let value = e.target.value.replace(/\D/g, ""); 
     if (value.length > 14) value = value.slice(0, 14);
     
-    value = value.replace(/^(\d{2})(\d)/, "$1.$2");
-    value = value.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
-    value = value.replace(/\.(\d{3})(\d)/, ".$1/$2");
-    value = value.replace(/(\d{4})(\d)/, "$1-$2");
+    if (value.length > 12) {
+      value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{1,2})$/, "$1.$2.$3/$4-$5");
+    } else if (value.length > 8) {
+      value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{1,4})$/, "$1.$2.$3/$4");
+    } else if (value.length > 5) {
+      value = value.replace(/^(\d{2})(\d{3})(\d{1,3})$/, "$1.$2.$3");
+    } else if (value.length > 2) {
+      value = value.replace(/^(\d{2})(\d{1,3})$/, "$1.$2");
+    }
     
     e.target.value = value;
   });
 
+  // Gatilhos de validação ao tirar o foco do elemento (blur)
   nome.addEventListener("blur", () => validarCampoObrigatorio(nome));
   email.addEventListener("blur", validarEmail);
   telefone.addEventListener("blur", () => validarCampoObrigatorio(telefone));
+  cnpj.addEventListener("blur", () => validarCampoObrigatorio(cnpj));
+  endereco.addEventListener("blur", () => validarCampoObrigatorio(endereco));
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); 
+    
+    // CORREÇÃO 2: Forçando todos os inputs a passarem pela validação obrigatória
     const nomeValido = validarCampoObrigatorio(nome);
     const emailValido = validarEmail();
     const telefoneValido = validarCampoObrigatorio(telefone);
+    const cnpjValido = validarCampoObrigatorio(cnpj);
+    const enderecoValido = validarCampoObrigatorio(endereco);
     
-    if (endereco.value.trim() !== "") {
-      definirStatus(endereco, true);
-    }
-
-    if (nomeValido && emailValido && telefoneValido) {
+    // O envio só é liberado se todas as constantes forem verdadeiras (true)
+    if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
       alert("Food Truck cadastrado com sucesso!");
-      form.reset(); // Limpa todos os campos
+      form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {
         campo.classList.remove("sucesso-input", "erro-input");

@@ -64,14 +64,20 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.value = value;
   });
 
+  // CORREÇÃO AQUI: Nova lógica para fatiar e formatar o CNPJ passo a passo
   cnpj.addEventListener("input", (e) => {
     let value = e.target.value.replace(/\D/g, ""); 
     if (value.length > 14) value = value.slice(0, 14);
     
-    value = value.replace(/^(\d{2})(\d)/, "$1.$2");
-    value = value.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
-    value = value.replace(/\.(\d{3})(\d)/, ".$1/$2");
-    value = value.replace(/(\d{4})(\d)/, "$1-$2");
+    if (value.length > 12) {
+      value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{1,2})$/, "$1.$2.$3/$4-$5");
+    } else if (value.length > 8) {
+      value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{1,4})$/, "$1.$2.$3/$4");
+    } else if (value.length > 5) {
+      value = value.replace(/^(\d{2})(\d{3})(\d{1,3})$/, "$1.$2.$3");
+    } else if (value.length > 2) {
+      value = value.replace(/^(\d{2})(\d{1,3})$/, "$1.$2");
+    }
     
     e.target.value = value;
   });
@@ -79,20 +85,22 @@ document.addEventListener("DOMContentLoaded", () => {
   nome.addEventListener("blur", () => validarCampoObrigatorio(nome));
   email.addEventListener("blur", validarEmail);
   telefone.addEventListener("blur", () => validarCampoObrigatorio(telefone));
+  cnpj.addEventListener("blur", () => validarCampoObrigatorio(cnpj));
+  endereco.addEventListener("blur", () => validarCampoObrigatorio(endereco));
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); 
+    
     const nomeValido = validarCampoObrigatorio(nome);
     const emailValido = validarEmail();
     const telefoneValido = validarCampoObrigatorio(telefone);
+    const cnpjValido = validarCampoObrigatorio(cnpj);
+    const enderecoValido = validarCampoObrigatorio(endereco);
     
-    if (endereco.value.trim() !== "") {
-      definirStatus(endereco, true);
-    }
-
-    if (nomeValido && emailValido && telefoneValido) {
+    // CORREÇÃO AQUI: Só envia se TODOS os campos obrigatórios forem válidos
+    if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
       alert("Cafeteria cadastrada com sucesso!");
-      form.reset(); // Limpa todos os campos
+      form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {
         campo.classList.remove("sucesso-input", "erro-input");
