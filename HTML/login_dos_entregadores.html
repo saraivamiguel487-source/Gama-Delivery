@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login_dos_entregadores.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Login dos entregadores do Gama Delivery</title>
 </head>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
     :root {
         --cor-primaria: darkgreen;
@@ -20,61 +21,152 @@
         --cor-fundo: white;
         --cor-texto: #000;
     }
-    *{
+
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    .formatacao{
+
+    /* Formatação Geral */
+    .formatacao {
         font-family: 'Montserrat', sans-serif;
         background-color: var(--cor-fundo);
-    }
-    .formatacao ul {
-        list-style: none;
-        display: flex;
-    }
-    .formatacao li{
-        text-decoration: none;
         color: var(--cor-texto);
-        padding: 10px 15px;
     }
-    .formatacao .icones {
-        display: flex;
-        gap: 10px;
-    }
-    .formatacao .icones a {
-        color: var(--cor-texto);
-        text-decoration: none;
-    }
-    .formatacao .icones a:hover {
-        color: var(--cor-primaria);
-    }
-    .formatacao .icones i {
-        font-size: 20px;
-    }
-    .formatacao .icones i:hover {
-        color: var(--cor-primaria);
-    }
+
     .formatacao main {
         padding: 20px;
     }
+
+    /* Cabeçalho e Navegação */
     .formatacao header {
         text-align: center;
         margin-bottom: 20px;
+        padding: 15px 0;
     }
+
     .formatacao nav {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
     }
-    .aside{
+
+    .formatacao ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .formatacao li {
+        padding: 5px;
+    }
+
+    /* Ícones e Links de Navegação (Corrigido) */
+    .formatacao .icones {
+        color: var(--cor-texto);
+        text-decoration: none;
+        display: inline-block;
+        transition: color 0.2s ease-in-out;
+    }
+
+    .formatacao .icones i {
+        font-size: 20px;
+    }
+
+    /* Efeito Hover nos Ícones (Corrigido) */
+    .formatacao .icones:hover,
+    .formatacao .icones:hover i {
+        color: var(--cor-primaria) !important;
+    }
+
+    /* Área do Formulário de Login */
+    .area-cadastro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+    }
+
+    .area-titulo {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .form-cadastro {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .area-acesso div {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .titulo-campo label {
+        font-weight: 500;
+    }
+
+    .titulo-campo input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+    }
+
+    /* Área de Botões e Links Úteis */
+    .area-botao {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .area-botao button {
+        background-color: var(--cor-primaria);
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        transition: background-color 0.2s ease;
+    }
+
+    .area-botao button:hover {
+        background-color: var(--cor-secundaria);
+    }
+
+    .link-login {
+        color: var(--cor-texto);
+        font-size: 14px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .link-login:hover {
+        text-decoration: underline;
+        color: var(--cor-secundaria);
+    }
+
+    /* Outros Componentes */
+    .aside {
         padding: 20px;
         background-color: var(--cor-fundo);
     }
-    .area-acesso div {
-        margin-bottom: 20px;
-    }
 </style>
+
 <body class="formatacao">
     <header>
         <nav class="area-navegação">
@@ -95,7 +187,7 @@
         <section class="area-titulo">
             <h1>Login do Gama Delivery</h1>
         </section>
-        
+
         <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-logar">
                 <div class="area-acesso">
@@ -112,10 +204,12 @@
                 <div class="area-botao">
                     <button type="submit" id="botao-cadastrar">Entrar</button>
                     <a href="#" class="link-login">Esqueceu a sua senha? Clique aqui!</a>
-                    <a href="cadastro_dos_entregadores.html" class="link-login">Ainda não possui uma conta? Clique aqui para cadastrar-se!</a>
+                    <a href="cadastro_dos_entregadores.html" class="link-login">Ainda não possui uma conta? Clique aqui
+                        para cadastrar-se!</a>
                 </div>
             </form>
         </section>
     </main>
 </body>
+
 </html>

@@ -1,5 +1,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+  @import url('https://googleapis.com');
+
 :root {
   --cor-primaria: darkgreen;
   --cor-secundaria: green;
@@ -13,15 +15,17 @@
   box-sizing: border-box;
 }
 
+/* Base da Página */
 .formatacao, body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
 }
 
+/* Cabeçalho e Menu de Navegação */
 header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding: 15px 0;
 }
 
@@ -37,9 +41,10 @@ header {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
 }
 
+/* Ícones de Navegação e Hover Fix */
 .icones {
   color: var(--cor-texto);
   text-decoration: none;
@@ -56,13 +61,13 @@ header {
   color: var(--cor-primaria) !important;
 }
 
+/* Estrutura Centralizada do Formulário */
 .area-cadastro {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 50vh;
-  padding: 0 20px;
+  padding: 20px;
+  min-height: 80vh;
 }
 
 .area-titulo h1 {
@@ -75,7 +80,7 @@ header {
 
 .area-formulario {
   width: 100%;
-  max-width: 400px; 
+  max-width: 600px; /* Largura estendida para melhor legibilidade dos dados */
   background-color: #fff;
 }
 
@@ -85,38 +90,66 @@ header {
   gap: 20px;
 }
 
-.area-acesso {
+/* Organização Modular de Linhas Coesivas */
+.linha-dupla {
   display: flex;
-  flex-direction: column;
   gap: 15px;
+  width: 100%;
 }
 
+/* Responsividade: Quebra as colunas em telas mobile */
+@media (max-width: 576px) {
+  .linha-dupla {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Customização dos Inputs e Rótulos */
 .titulo-campo {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1;
 }
+
+/* Proporções Inteligentes de Preenchimento */
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+.flex-3 { flex: 3; }
+.flex-4 { flex: 4; }
 
 .titulo-campo label {
   font-size: 14px;
   font-weight: 600;
 }
 
-.titulo-campo input {
-  padding: 12px;
+.titulo-campo input,
+.titulo-campo select {
+  padding: 11px 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   width: 100%;
+  background-color: #fff;
   outline: none;
   transition: border-color 0.2s;
 }
 
-.titulo-campo input:focus {
+.titulo-campo input:focus,
+.titulo-campo select:focus {
   border-color: var(--cor-primaria);
 }
 
+/* Elementos Auxiliares do JavaScript */
+.erro-email, .erro-senha, .erro-ddd {
+  font-size: 12px;
+  color: red;
+  margin-top: 2px;
+}
+
+/* Botões e Links de Apoio */
 .area-botao {
   display: flex;
   flex-direction: column;
@@ -145,13 +178,26 @@ header {
 
 .link-login {
   color: var(--cor-texto);
-  font-size: 13px;
+  font-size: 14px;
   text-decoration: none;
   text-align: center;
-  line-height: 1.4;
 }
 
 .link-login:hover {
   text-decoration: underline;
   color: var(--cor-secundaria);
+}
+.icones {
+  color: var(--cor-texto);
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease-in-out;
+}
+.icones i {
+  font-size: 20px;
+}
+.icones:hover,
+.icones:hover,
+.icones:hover i {
+  color: var(--cor-primaria) !important;
 }

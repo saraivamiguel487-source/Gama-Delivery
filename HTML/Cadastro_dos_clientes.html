@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastro.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="cadastro_dos_clientes.css">
+    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Cadastro dos clientes do Gama Delivery</title>
 </head>
-<body>
+
+<body class="formatacao">
     <header>
         <nav class="area-navegação">
-            <img class="logo" src="" alt="logo do site" width="100px">
+            <img class="logo" src="img/logo-tia-sonia.png" alt="logo do site" width="100px">
             <ul>
                 <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i></a></li>
                 <li><a class="icones" href="comidas.html"><i class="fa-solid fa-utensils"></i></a></li>
@@ -28,24 +27,30 @@
     </header>
 
     <main class="area-cadastro">
-        <section class="area-titulo formatacao">
-            <h1>Cadastre-se</h1>
+        <section class="area-titulo">
+            <h1>Cadastre-se como cliente</h1>
         </section>
-        <section class="area-formulario formatacao">
+
+        <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-cadastrar">
-                <div class="area-nome formatacao">
-                    <div class="nome titulo-campo">
+                
+                <!-- Nome e CPF -->
+                <div class="linha-dupla">
+                    <div class="nome titulo-campo flex-3">
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" required placeholder="Digite o seu nome completo.">
                     </div>
-                    <div class="area-cpf formatacao">
-                        <label for="cpf">CPF</label>
+                    <div class="area-cpf titulo-campo flex-2">
+                        <label for="CPF">CPF:</label>
                         <input type="text" id="CPF" required placeholder="Digite o seu CPF.">
                     </div>
-                <div class="area-acesso formatacao">
+                </div>
+
+                <!-- Credenciais de Acesso -->
+                <div class="linha-dupla">
                     <div class="email titulo-campo">
                         <label for="email">E-mail:</label>
-                        <input type="email" id="email" placeholder="digite o seu e-mail." required>
+                        <input type="email" id="email" placeholder="Digite o seu e-mail." required>
                         <span id="erro-email" class="erro-email"></span>
                     </div>
                     <div class="senha titulo-campo">
@@ -54,99 +59,72 @@
                         <span id="erro-senha" class="erro-senha"></span>
                     </div>
                 </div>
-                <div class="area-contato formatacao">
-                    <div class="DDD titulo-campo">
+
+                <!-- Contato -->
+                <div class="linha-dupla">
+                    <div class="ddd titulo-campo flex-1">
                         <label for="ddd">DDD:</label>
-                        <input type="number" max="99" id="ddd" placeholder="Digite o seu DDD.">
+                        <input type="number" max="99" id="ddd" placeholder="DDD">
                         <span id="erro-ddd" class="erro-ddd"></span>
                     </div>
-
-                    <div class="telefone titulo-campo">
+                    <div class="telefone titulo-campo flex-4">
                         <label for="telefone">Telefone:</label>
                         <input type="text" id="telefone" placeholder="Digite seu telefone" required>
                     </div>
                 </div>
-                <div class="area-endereco formatacao">
-                    <div class="endereco-numero">
-                        <div class="Endereço titulo-campo">
-                            <label for="adress">Endereço:</label>
-                            <input type="text" id="endereco" placeholder="digite seu endereço.">
-                        </div>
-                        <div class="numero titulo-campo">
-                            <label for="number">Número:</label>
 
-                            <input type="number" id="numero" placeholder=000>
-                        </div>
+                <!-- Endereço: Rua e Número -->
+                <div class="linha-dupla">
+                    <div class="endereço titulo-campo flex-4">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" placeholder="Digite seu endereço.">
                     </div>
-
-                    <div class="cidade-cep">
-                        <div class="cidade titulo-campo">
-
-                            <label for="city">Cidade:</label>
-
-                            <input type="text" id="cidade" placeholder="cidade">
-
-                        </div>
-                        <div class="cep titulo-campo">
-
-                            <label for="cep">CEP:</label>
-
-                            <input type="zip-code" id="cep" placeholder="00000-000">
-
-                        </div>
+                    <div class="numero titulo-campo flex-1">
+                        <label for="numero">Número:</label>
+                        <input type="number" id="numero" placeholder="000">
                     </div>
                 </div>
 
-                <div class="area-dados formatacao">
+                <!-- Endereço: Cidade e CEP -->
+                <div class="linha-dupla">
+                    <div class="cidade titulo-campo">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" placeholder="Cidade">
+                    </div>
+                    <div class="cep titulo-campo">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" placeholder="00000-000">
+                    </div>
+                </div>
 
+                <!-- Dados Pessoais -->
+                <div class="linha-dupla">
                     <div class="data-nascimento titulo-campo">
-
                         <label for="data-nascimento">Data de nascimento:</label>
-
-                        <input type="date" id="data-nacimento" required>
-
+                        <input type="date" id="data-nascimento" required>
                     </div>
-
                     <div class="genero titulo-campo">
-
                         <label for="genero">Gênero:</label>
-
                         <select id="genero" required>
-
-
-                            <option value="#">Selecione o seu gênero:
-                            </option>
-
-                            <option value="#">Feminino</option>
-
-                            <option value="#">Masculino</option>
-
-                            <option value="#">Outro</option>
-
-                            <option value="#">Prefiro não dizer</option>
-
+                            <option value="">Selecione o seu gênero:</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="outro">Outro</option>
+                            <option value="omitido">Prefiro não dizer</option>
                         </select>
-
                     </div>
-
                 </div>
 
-                <div class="area-botao formatacao">
-                    <button type="submit" id="botao-cadastrar">
-
-                        cadastrar
-
-                    </button>
-
-                    <a href="#" class="link-login">
-
-                        já possui uma conta? Acesse agora!</a>
-
+                <!-- Botão e Links -->
+                <div class="area-botao">
+                    <button type="submit" id="botao-cadastrar">Cadastrar</button>
+                    <a href="login_dos_clients.html" class="link-login">Já possui uma conta? Acesse agora!</a>
                 </div>
 
             </form>
-            <script src="js/login-cadastrar.js"></script>
-</body>
-</main>
+        </section>
+    </main>
 
+    <script src="js/login-cadastrar.js"></script>
+</body>
 </html>

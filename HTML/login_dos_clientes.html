@@ -15,126 +15,161 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-    :root {
-        --cor-primaria: darkgreen;
-        --cor-secundaria: green;
-        --cor-fundo: white;
-        --cor-texto: #000;
-    }
+:root {
+  --cor-primaria: darkgreen;
+  --cor-secundaria: green;
+  --cor-fundo: white;
+  --cor-texto: #000;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background-color: var(--cor-fundo);
-        color: var(--cor-texto);
-    }
+.formatacao, body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
 
-    header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 15px 0;
+}
 
-    nav.area-navegacao {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        padding: 10px 20px;
-    }
+.area-navegacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
 
-    nav.area-navegacao ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
+.area-navegacao ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    nav.area-navegacao li {
-        padding: 10px 15px;
-    }
+.icones {
+  color: var(--cor-texto);
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease-in-out;
+}
 
-    .icones {
-        display: flex;
-        gap: 10px;
-        color: var(--cor-texto);
-        text-decoration: none;
-    }
+.icones i {
+  font-size: 20px;
+}
 
-    .icones:hover {
-        color: var(--cor-primaria);
-    }
+.icones:hover,
+.icones:hover i {
+  color: var(--cor-primaria) !important;
+}
 
-    .icones i {
-        font-size: 20px;
-    }
+.area-cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 0 20px;
+}
 
-    main.area-cadastro {
-        padding: 20px;
-        max-width: 500px;
-        margin: 0 auto;
-    }
+.area-titulo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--cor-primaria);
+  text-align: center;
+}
 
-    .area-titulo {
-        text-align: center;
-        margin-bottom: 30px;
-    }
+.area-formulario {
+  width: 100%;
+  max-width: 400px; 
+  background-color: #fff;
+}
 
-    .area-acesso {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    .titulo-campo {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
+.area-acesso {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-    .titulo-campo input {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+.titulo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-    .area-botao {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
+.titulo-campo label {
+  font-size: 14px;
+  font-weight: 600;
+}
 
-    .area-botao button {
-        width: 100%;
-        padding: 12px;
-        background-color: var(--cor-primaria);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-    }
+.titulo-campo input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
 
-    .area-botao button:hover {
-        background-color: var(--cor-secundaria);
-    }
+.titulo-campo input:focus {
+  border-color: var(--cor-primaria);
+}
 
-    .link-login {
-        color: var(--cor-secundaria);
-        text-decoration: none;
-        font-size: 0.9rem;
-        text-align: center;
-    }
+.area-botao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
 
-    .link-login:hover {
-        text-decoration: underline;
-    }
+.area-botao button {
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease;
+}
+
+.area-botao button:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.link-login {
+  color: var(--cor-texto);
+  font-size: 13px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.link-login:hover {
+  text-decoration: underline;
+  color: var(--cor-secundaria);
+}
 </style>
 
 <body>
