@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Garante que o cadastro só termine se tudo retornar 'true'
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Padaria cadastrada com sucesso!");
+      alert("Padaria procurada com sucesso!");
       form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {

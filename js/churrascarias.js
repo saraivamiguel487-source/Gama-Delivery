@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Só avança se todas as variáveis retornarem true
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Churrascaria cadastrada com sucesso!");
+      alert("Churrascaria procurada com sucesso!");
       form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {

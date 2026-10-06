@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Cafeteria</title>
+    <title>Procurar Cafeteria</title>
     <!-- CORRIGIDO: Substituído o link incompleto do jsdelivr por uma folha de estilos limpa (Normalize.css) para resetar as margens dos navegadores -->
     <link rel="stylesheet" href="https://jsdelivr.net">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" referrerpolicy="no-referrer" />
@@ -20,23 +20,23 @@
                 <li><a class="icones" href="login_dos_entregadores.html"><i class="fa-solid fa-motorcycle"></i></a></li>
             </ul>
 
-    <main class="area-cadastro">
+    <main class="area-procurar-cafeteria">
         <section class="area-titulo">
-            <h1>Cadastro de Cafeteria</h1>
+            <h1>Procurar Cafeteria</h1>
         </section> 
 
         <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-cadastrar">
                 <div class="area-nome formatacao">
                     <div class="nome titulo-campo">
-                        <label for="nome">Nome da cafeteria:</label>
+                        <label for="nome">Nome da cafeteria procurada:</label>
                         <input type="text" id="nome" required placeholder="Digite o nome completo da cafeteria">
                     </div>
                 </div>
 
                 <div class="area-acesso formatacao">
                     <div class="email titulo-campo">
-                        <label for="email">E-mail da cafeteria:</label>
+                        <label for="email">E-mail da cafeteria procurada:</label>
                         <input type="email" id="email" placeholder="Digite o e-mail da cafeteria" required>
                         <span id="erro-email" class="erro-email"></span>
                     </div>
@@ -44,11 +44,11 @@
 
                 <div class="area-contato formatacao">
                     <div class="telefone titulo-campo">
-                        <label for="telefone">Telefone da cafeteria:</label>
+                        <label for="telefone">Telefone da cafeteria procurada:</label>
                         <input type="text" id="telefone" placeholder="Digite o telefone da cafeteria" required>
                     </div>
                     <div class="CNPJ titulo-campo">
-                        <label for="CNPJ">CNPJ da cafeteria:</label>
+                        <label for="CNPJ">CNPJ da cafeteria procurada:</label>
                         <input type="text" id="CNPJ" placeholder="Digite o CNPJ da cafeteria">
                     </div>
                 </div>
@@ -56,20 +56,24 @@
                 <div class="area-endereco formatacao area-endereco-bloco">
                     <div class="endereco-numero">
                         <div class="Endereco titulo-campo">
-                            <label for="endereco">Endereço da cafeteria:</label>
+                            <label for="endereco">Endereço da cafeteria procurada:</label>
                             <input type="text" id="endereco" placeholder="Digite o endereço da cafeteria">
                         </div>
                     </div>
                 </div>
 
                 <div class="area-botao">
-                    <button type="submit" id="botao-cadastrar">Cadastrar</button>
-                    <a href="login.html" class="link-login">Já possui uma conta? Acesse agora!</a>
+                    <button type="submit" id="botao-procurar">Procurar por comidas</button>
+                    <a href="Comidas.html" class="link-login">Já possui uma conta? Acesse agora!</a>
+                    <button type="submit" id="botao-procurar">Procurar por acompanhamentos na minha comida</button>
+                    <a href="Acompanhamentos_na_comida.html" class="link-login">Já possui uma conta? Acesse agora!</a>
+                    <button type="submit" id="botao-procurar">Procurar por bebidas</button>
+                    <a href="Bebidas.html" class="link-login">Já possui uma conta? Acesse agora!</a>
                 </div>
             </form>
         </section>
     </main>
 
-    <script src="js/login-cadastrar.js"></script>
+    <script src="js/cafeterias.js"></script>
 </body>
 </html>

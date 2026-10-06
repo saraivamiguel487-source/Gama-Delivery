@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Verifica a resposta de validação de todas as variáveis
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Hamburgueria cadastrada com sucesso!");
+      alert("Hamburgueria procurada com sucesso!");
       form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {

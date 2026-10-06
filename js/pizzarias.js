@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // O envio só é concluído se todas as variáveis retornarem true
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Pizzaria cadastrada com sucesso!");
+      alert("Pizzaria procurada com sucesso!");
       form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {

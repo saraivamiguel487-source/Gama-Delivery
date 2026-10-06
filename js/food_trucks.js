@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // O envio só é liberado se todas as constantes forem verdadeiras (true)
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Food Truck cadastrado com sucesso!");
+      alert("Food Truck procurado com sucesso!");
       form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {

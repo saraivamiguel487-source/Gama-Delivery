@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // CORREÇÃO AQUI: Só envia se TODOS os campos obrigatórios forem válidos
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Cafeteria cadastrada com sucesso!");
+      alert("Cafeteria procurada com sucesso!");
       form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {

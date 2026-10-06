@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Restaurante</title>
+    <title>Procurar Pastelaria</title>
     <link href="https://jsdelivr.net" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" referrerpolicy="no-referrer" />
 </head>
@@ -23,23 +23,23 @@
         </nav>
     </header>
 
-    <main class="area-cadastro">
+    <main class="area-procurar-pastelaria">
         <section class="area-titulo">
-            <h1>Cadastre-se</h1>
+            <h1>Procurar Pastelaria</h1>
         </section> 
 
         <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-cadastrar">
                 <div class="area-nome formatacao">
                     <div class="nome titulo-campo">
-                        <label for="nome">Nome do pastelaria:</label>
+                        <label for="nome">Nome do pastelaria procurada:</label>
                         <input type="text" id="nome" required placeholder="Digite o nome completo da pastelaria">
                     </div>
                 </div>
 
                 <div class="area-acesso formatacao">
                     <div class="email titulo-campo">
-                        <label for="email">E-mail do pastelaria:</label>
+                        <label for="email">E-mail do pastelaria procurada:</label>
                         <input type="email" id="email" placeholder="Digite o e-mail da pastelaria" required>
                         <span id="erro-email" class="erro-email"></span>
                     </div>
@@ -47,11 +47,11 @@
 
                 <div class="area-contato formatacao">
                     <div class="telefone titulo-campo">
-                        <label for="telefone">Telefone do pastelaria:</label>
+                        <label for="telefone">Telefone do pastelaria procurada:</label>
                         <input type="text" id="telefone" placeholder="Digite o telefone da pastelaria" required>
                     </div>
                     <div class="CNPJ titulo-campo">
-                        <label for="CNPJ">CNPJ do pastelaria:</label>
+                        <label for="CNPJ">CNPJ do pastelaria procurada:</label>
                         <input type="text" id="CNPJ" placeholder="Digite o CNPJ da pastelaria">
                     </div>
                 </div>
@@ -59,18 +59,22 @@
                 <div class="area-endereco formatacao area-endereco-bloco">
                     <div class="endereco-numero">
                         <div class="Endereco titulo-campo">
-                            <label for="endereco">Endereço da pastelaria:</label>
+                            <label for="endereco">Endereço da pastelaria procurada:</label>
                             <input type="text" id="endereco" placeholder="Digite o endereço da pastelaria">
                         </div>
           
                 <div class="area-botao">
-                    <button type="submit" id="botao-cadastrar">Cadastrar</button>
-                    <a href="login.html" class="link-login">Já possui uma conta? Acesse agora!</a>
+                    <button type="submit" id="botao-cadastrar">Procurar por comidas</button>
+                    <a href="Comidas.html"></a>
+                    <button type="submit" id="botao-procurar">Procurar por acompanhamentos na minha comida</button>
+                    <a href="Acompanhamentos_na_comida.html"></a>
+                    <button type="submit" id="botao-procurar">Procurar por bebidas</button>
+                    <a href="Bebidas.html"></a>
                 </div>
             </form>
         </section>
     </main>
 
-    <script src="js/login-cadastrar.js"></script>
+    <script src="js/pastelarias.js"></script>
 </body>
 </html>

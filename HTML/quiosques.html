@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Restaurante</title>
+    <title>Procurar Quiosque</title>
     <link href="https://jsdelivr.net" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" referrerpolicy="no-referrer" />
 
@@ -24,23 +24,23 @@
         </nav>
     </header>
 
-    <main class="area-cadastro">
+    <main class="area-procurar-quiosque">
         <section class="area-titulo">
-            <h1>Cadastre-se</h1>
+            <h1>Procurar Quiosque</h1>
         </section> 
 
         <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-cadastrar">
                 <div class="area-nome formatacao">
                     <div class="nome titulo-campo">
-                        <label for="nome">Nome do quiosque:</label>
+                        <label for="nome">Nome do quiosque procurado:</label>
                         <input type="text" id="nome" required placeholder="Digite o nome completo do restaurante">
                     </div>
                 </div>
 
                 <div class="area-acesso formatacao">
                     <div class="email titulo-campo">
-                        <label for="email">E-mail do quiosque:</label>
+                        <label for="email">E-mail do quiosque procurado:</label>
                         <input type="email" id="email" placeholder="Digite o e-mail do restaurante" required>
                         <span id="erro-email" class="erro-email"></span>
                     </div>
@@ -48,11 +48,11 @@
 
                 <div class="area-contato formatacao">
                     <div class="telefone titulo-campo">
-                        <label for="telefone">Telefone do quiosque:</label>
+                        <label for="telefone">Telefone do quiosque procurado:</label>
                         <input type="text" id="telefone" placeholder="Digite seu telefone" required>
                     </div>
                     <div class="CNPJ titulo-campo">
-                        <label for="CNPJ">CNPJ do quiosque:</label>
+                        <label for="CNPJ">CNPJ do quiosque procurado:</label>
                         <input type="text" id="CNPJ" placeholder="Digite o CNPJ do restaurante">
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="area-endereco formatacao area-endereco-bloco">
                     <div class="endereco-numero">
                         <div class="Endereco titulo-campo">
-                            <label for="endereco">Rua do quiosque:</label>
+                            <label for="endereco">Rua do quiosque procurado:</label>
                             <input type="text" id="endereco" placeholder="Digite a rua onde fica o quiosque">
                         </div>
 
@@ -68,13 +68,17 @@
                 </div>
 
                 <div class="area-botao">
-                    <button type="submit" id="botao-cadastrar">Cadastrar</button>
-                    <a href="login.html" class="link-login">Já possui uma conta? Acesse agora!</a>
+                    <button type="submit" id="botao-procurar">Procurar por comidas</button>
+                    <a href="Comidas.html"></a>
+                    <button type="submit" id="botao-procurar">Procurar por acompanhamentos na minha comida</button>
+                    <a href="Acompanhamentos_na_comida.html"></a>
+                        <button type="submit" id="botao-procurar">Procurar por bebidas</button>
+                    <a href="Bebidas.html"></a>
                 </div>
             </form>
         </section>
     </main>
 
-    <script src="js/login-cadastrar.js"></script>
+    <script src="js/quiosques.js"></script>
 </body>
 </html>

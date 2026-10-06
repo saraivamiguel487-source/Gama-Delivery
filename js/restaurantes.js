@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const enderecoValido = validarCampoObrigatorio(endereco);
 
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Restaurante cadastrado com sucesso!"); // AJUSTE: Frase corrigida para fazer sentido
+      alert("Restaurante procurado com sucesso!"); // AJUSTE: Frase corrigida para fazer sentido
       form.reset();
       
       // Remove todas as classes de status após limpar o formulário

@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // O formulário só envia se todas as checagens forem verdadeiras (true)
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Quiosque cadastrado com sucesso!");
+      alert("Quiosque procurado com sucesso!");
       form.reset(); 
       
       [nome, email, telefone, cnpj, endereco].forEach(campo => {
