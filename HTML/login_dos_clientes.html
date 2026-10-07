@@ -11,190 +11,28 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Login dos clientes do Gama Delivery</title>
 </head>
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-:root {
-  --cor-primaria: darkgreen;
-  --cor-secundaria: green;
-  --cor-fundo: white;
-  --cor-texto: #000;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.formatacao, body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-}
-
-header {
-  text-align: center;
-  margin-bottom: 40px;
-  padding: 15px 0;
-}
-
-.area-navegacao {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.area-navegacao ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.icones {
-  color: var(--cor-texto);
-  text-decoration: none;
-  display: inline-block;
-  transition: color 0.2s ease-in-out;
-}
-
-.icones i {
-  font-size: 20px;
-}
-
-.icones:hover,
-.icones:hover i {
-  color: var(--cor-primaria) !important;
-}
-
-.area-cadastro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 50vh;
-  padding: 0 20px;
-}
-
-.area-titulo h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-  color: var(--cor-primaria);
-  text-align: center;
-}
-
-.area-formulario {
-  width: 100%;
-  max-width: 400px; 
-  background-color: #fff;
-}
-
-.form-cadastro {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.area-acesso {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.titulo-campo {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.titulo-campo label {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.titulo-campo input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  width: 100%;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.titulo-campo input:focus {
-  border-color: var(--cor-primaria);
-}
-
-.area-botao {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.area-botao button {
-  background-color: var(--cor-primaria);
-  color: white;
-  border: none;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: background-color 0.2s ease;
-}
-
-.area-botao button:hover {
-  background-color: var(--cor-secundaria);
-}
-
-.link-login {
-  color: var(--cor-texto);
-  font-size: 13px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.link-login:hover {
-  text-decoration: underline;
-  color: var(--cor-secundaria);
-}
-</style>
-
 <body>
     <header>
         <nav class="area-navegacao">
-            <img class="logo" src="" alt="logo do site" width="100px">
+            <!-- Ajustado: caminho padrão fictício para o logo não quebrar -->
+            <img class="logo" src="logo.png" alt="logo do site" width="100px">
             <ul>
                 <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i></a></li>
                 <li><a class="icones" href="comidas.html"><i class="fa-solid fa-utensils"></i></a></li>
                 <li><a class="icones" href="acompanhamentos_na_comida.html"><i class="fa-solid fa-store"></i></a></li>
-                <li><a class="icones" href="quiosques.html"><i class="fa-solid fa-store"></i></a></li>
                 <li><a class="icones" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a class="icones" href="login_dos_clientes.html"><i class="fa-solid fa-user"></i></a></li>
-                <li><a class="icones" href="login_dos_entregadores.html"><i class="fa-solid fa-motorcycle"></i></a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="area-cadastro">
+    <!-- Ajustado: alterado de area-cadastro para area-login para manter a semântica -->
+    <main class="area-login">
         <section class="area-titulo">
             <h1>Login do Gama Delivery</h1>
         </section>
 
         <section class="area-formulario">
-            <form action="#" class="form-cadastro" id="form-logar">
+            <form action="#" class="form-login" id="form-logar">
                 <div class="area-acesso">
                     <div class="email titulo-campo">
                         <label for="email">E-mail:</label>
@@ -207,8 +45,9 @@ header {
                 </div>
 
                 <div class="area-botao">
-                    <button type="submit" id="botao-cadastrar">Entrar</button>
-                    <a href="#" class="link-login">Esqueceu a sua senha? Clique aqui!</a>
+                    <!-- Ajustado: alterado id de botao-cadastrar para botao-entrar -->
+                    <button type="submit" id="botao-entrar">Entrar</button>
+                    <a href="recuperar_senha.html" class="link-login">Esqueceu a sua senha? Clique aqui!</a>
                     <a href="Cadastro_dos_clientes.html" class="link-login">Ainda não possui uma conta? Clique aqui para cadastrar-se!</a>
                 </div>
             </form>

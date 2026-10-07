@@ -54,11 +54,6 @@ nav {
     justify-content: center;
     gap: 20px;
 }
-.catalogo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
 .area-busca {
     display: flex;
     justify-content: center;
@@ -98,8 +93,21 @@ nav {
 }
 .aside{
     padding: 20px;
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-primaria);
 }
-div {
+.div {
+    margin-bottom: 20px;
+}
+.catalogo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.article {
+    border: 1px solid var(--cor-primaria);
+    padding: 10px;
+    text-align: center;
+}
+.section {
     margin-bottom: 20px;
 }

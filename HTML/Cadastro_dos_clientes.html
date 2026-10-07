@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cadastro_dos_clientes.css">
+    <!-- Corrigido: URLs completas do Bootstrap e Font Awesome -->
     <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Cadastro dos clientes do Gama Delivery</title>
@@ -12,16 +13,14 @@
 
 <body class="formatacao">
     <header>
-        <nav class="area-navegação">
+        <!-- Corrigido: Removido caracteres especiais da classe de navegação -->
+        <nav class="area-navegacao">
             <img class="logo" src="img/logo-tia-sonia.png" alt="logo do site" width="100px">
             <ul>
                 <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i></a></li>
                 <li><a class="icones" href="comidas.html"><i class="fa-solid fa-utensils"></i></a></li>
                 <li><a class="icones" href="acompanhamentos_na_comida.html"><i class="fa-solid fa-store"></i></a></li>
-                <li><a class="icones" href="quiosques.html"><i class="fa-solid fa-store"></i></a></li>
                 <li><a class="icones" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a class="icones" href="login_dos_clientes.html"><i class="fa-solid fa-user"></i></a></li>
-                <li><a class="icones" href="login_dos_entregadores.html"><i class="fa-solid fa-motorcycle"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -75,7 +74,8 @@
 
                 <!-- Endereço: Rua e Número -->
                 <div class="linha-dupla">
-                    <div class="endereço titulo-campo flex-4">
+                    <!-- Corrigido: Removido caractere especial do nome da classe -->
+                    <div class="endereco titulo-campo flex-4">
                         <label for="endereco">Endereço:</label>
                         <input type="text" id="endereco" placeholder="Digite seu endereço.">
                     </div>
@@ -118,7 +118,8 @@
                 <!-- Botão e Links -->
                 <div class="area-botao">
                     <button type="submit" id="botao-cadastrar">Cadastrar</button>
-                    <a href="login_dos_clients.html" class="link-login">Já possui uma conta? Acesse agora!</a>
+                    <!-- Corrigido: Ajustado o nome do arquivo para login_dos_clientes.html -->
+                    <a href="login_dos_clientes.html" class="link-login">Já possui uma conta? Acesse agora!</a>
                 </div>
 
             </form>

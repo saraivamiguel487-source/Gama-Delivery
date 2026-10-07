@@ -12,184 +12,28 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Login dos entregadores do Gama Delivery</title>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-    :root {
-        --cor-primaria: darkgreen;
-        --cor-secundaria: green;
-        --cor-fundo: white;
-        --cor-texto: #000;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    /* Formatação Geral */
-    .formatacao {
-        font-family: 'Montserrat', sans-serif;
-        background-color: var(--cor-fundo);
-        color: var(--cor-texto);
-    }
-
-    .formatacao main {
-        padding: 20px;
-    }
-
-    /* Cabeçalho e Navegação */
-    .formatacao header {
-        text-align: center;
-        margin-bottom: 20px;
-        padding: 15px 0;
-    }
-
-    .formatacao nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .formatacao ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .formatacao li {
-        padding: 5px;
-    }
-
-    /* Ícones e Links de Navegação (Corrigido) */
-    .formatacao .icones {
-        color: var(--cor-texto);
-        text-decoration: none;
-        display: inline-block;
-        transition: color 0.2s ease-in-out;
-    }
-
-    .formatacao .icones i {
-        font-size: 20px;
-    }
-
-    /* Efeito Hover nos Ícones (Corrigido) */
-    .formatacao .icones:hover,
-    .formatacao .icones:hover i {
-        color: var(--cor-primaria) !important;
-    }
-
-    /* Área do Formulário de Login */
-    .area-cadastro {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 60vh;
-    }
-
-    .area-titulo {
-        text-align: center;
-        margin-bottom: 25px;
-    }
-
-    .form-cadastro {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .area-acesso div {
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .titulo-campo label {
-        font-weight: 500;
-    }
-
-    .titulo-campo input {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-family: 'Montserrat', sans-serif;
-        width: 100%;
-    }
-
-    /* Área de Botões e Links Úteis */
-    .area-botao {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 10px;
-    }
-
-    .area-botao button {
-        background-color: var(--cor-primaria);
-        color: white;
-        border: none;
-        padding: 12px;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 5px;
-        cursor: pointer;
-        font-family: 'Montserrat', sans-serif;
-        transition: background-color 0.2s ease;
-    }
-
-    .area-botao button:hover {
-        background-color: var(--cor-secundaria);
-    }
-
-    .link-login {
-        color: var(--cor-texto);
-        font-size: 14px;
-        text-decoration: none;
-        text-align: center;
-    }
-
-    .link-login:hover {
-        text-decoration: underline;
-        color: var(--cor-secundaria);
-    }
-
-    /* Outros Componentes */
-    .aside {
-        padding: 20px;
-        background-color: var(--cor-fundo);
-    }
-</style>
-
 <body class="formatacao">
     <header>
-        <nav class="area-navegação">
+        <!-- Corrigido: Removido caracteres especiais do nome da classe -->
+        <nav class="area-navegacao">
             <img class="logo" src="img/logo-tia-sonia.png" alt="logo do site" width="100px">
             <ul>
                 <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i></a></li>
                 <li><a class="icones" href="comidas.html"><i class="fa-solid fa-utensils"></i></a></li>
                 <li><a class="icones" href="acompanhamentos_na_comida.html"><i class="fa-solid fa-store"></i></a></li>
-                <li><a class="icones" href="quiosques.html"><i class="fa-solid fa-store"></i></a></li>
                 <li><a class="icones" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a class="icones" href="login_dos_clientes.html"><i class="fa-solid fa-user"></i></a></li>
-                <li><a class="icones" href="login_dos_entregadores.html"><i class="fa-solid fa-motorcycle"></i></a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="area-cadastro">
+    <!-- Corrigido: Modificado o escopo de cadastro para login para fins semânticos -->
+    <main class="area-login">
         <section class="area-titulo">
             <h1>Login do Gama Delivery</h1>
         </section>
 
         <section class="area-formulario">
-            <form action="#" class="form-cadastro" id="form-logar">
+            <form action="#" class="form-login" id="form-logar">
                 <div class="area-acesso">
                     <div class="email titulo-campo">
                         <label for="email">E-mail:</label>
@@ -202,8 +46,9 @@
                 </div>
 
                 <div class="area-botao">
-                    <button type="submit" id="botao-cadastrar">Entrar</button>
-                    <a href="#" class="link-login">Esqueceu a sua senha? Clique aqui!</a>
+                    <!-- Corrigido: IDs e classes ajustados de cadastrar para entrar -->
+                    <button type="submit" id="botao-entrar">Entrar</button>
+                    <a href="recuperar_senha_entregador.html" class="link-login">Esqueceu a sua senha? Clique aqui!</a>
                     <a href="cadastro_dos_entregadores.html" class="link-login">Ainda não possui uma conta? Clique aqui
                         para cadastrar-se!</a>
                 </div>
