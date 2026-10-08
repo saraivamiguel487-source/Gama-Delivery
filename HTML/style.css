@@ -91,23 +91,132 @@ nav {
 .area-navegacao a:hover {
     color: var(--cor-primaria);
 }
-.aside{
+aside {
     padding: 20px;
     background-color: var(--cor-primaria);
+    color: var(--cor-fundo); /* letras brancas */
 }
-.div {
-    margin-bottom: 20px;
+.area-categorias {
+    background-color: #006400; /* verde escuro */
+    padding: 20px;
 }
-.catalogo{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+
+.area-categorias h2,
+.area-categorias .categoria span,
+.area-categorias .categoria i {
+    color: #FFFFFF; /* letras e ícones brancos */
 }
-.article {
-    border: 1px solid var(--cor-primaria);
-    padding: 10px;
+.area-categorias {
+    background-color: var(--cor-primaria); /* verde escuro */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.area-categorias h2 {
+    color: var(--cor-fundo); /* branco */
     text-align: center;
+    margin-bottom: 15px;
 }
-.section {
-    margin-bottom: 20px;
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-secundaria); /* verde claro */
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.categoria i,
+.categoria span {
+    color: var(--cor-fundo); /* branco */
+    font-weight: bold;
+}
+
+.categoria:hover {
+    background-color: #004d00; /* tom mais escuro no hover */
+}
+/* Estilo padrão para desktop */
+.area-categorias {
+    background-color: var(--cor-primaria); /* verde escuro */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.area-categorias h2 {
+    color: var(--cor-fundo); /* branco */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-secundaria); /* verde claro */
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.categoria i,
+.categoria span {
+    color: var(--cor-fundo); /* branco */
+    font-weight: bold;
+}
+
+.categoria:hover {
+    background-color: #004d00; /* tom mais escuro no hover */
+}
+
+/* 📱 Responsividade para celular */
+@media (max-width: 768px) {
+    .area-navegacao {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .categorias {
+        grid-template-columns: 1fr 1fr; /* duas colunas no celular */
+    }
+
+    .busca__campo {
+        width: 100%; /* campo de busca ocupa toda largura */
+    }
+
+    .area-busca {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* 📱 Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    .categorias {
+        grid-template-columns: 1fr; /* uma coluna só */
+    }
+
+    .categoria {
+        padding: 10px;
+    }
+
+    .area-navegacao ul {
+        flex-direction: column;
+        align-items: center;
+    }
 }

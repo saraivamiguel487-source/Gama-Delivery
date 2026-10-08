@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procurar Cafeteria</title>
     <!-- CORRIGIDO: Substituído o link incompleto do jsdelivr por uma folha de estilos limpa (Normalize.css) para resetar as margens dos navegadores -->
     <link rel="stylesheet" href="https://jsdelivr.net">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cafeterias.css">
 </head>
+
 <body>
     <header>
-            <ul>
-                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i></a></li>
-                <li><a class="icones" href="comidas.html"><i class="fa-solid fa-utensils"></i></a></li>
-                <li><a class="icones" href="acompanhamentos_na_comida.html"><i class="fa-solid fa-store"></i></a></li>
-                <li><a class="icones" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a class="icones" href="login_dos_clientes.html"><i class="fa-solid fa-user"></i></a></li>
-                <li><a class="icones" href="login_dos_entregadores.html"><i class="fa-solid fa-motorcycle"></i></a></li>
-            </ul>
-
+        <nav class="area-navegacao">
+            <img class="logo" src="" alt="logo do site" width="100px">
+            <div class="area-botao">
+                <a href="comidas.html" class="botao">Procurar por comidas</a>
+                <a href="acompanhamentos_na_comida.html" class="botao">Procurar por acompanhamentos</a>
+                <a href="bebidas.html" class="botao">Procurar por bebidas</a>
+            </div>
+        </nav>
+    </header>
     <main class="area-procurar-cafeteria">
         <section class="area-titulo">
             <h1>Procurar Cafeteria</h1>
-        </section> 
+        </section>
 
         <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-cadastrar">
@@ -76,4 +79,5 @@
 
     <script src="js/cafeterias.js"></script>
 </body>
+
 </html>

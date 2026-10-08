@@ -1,56 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
- :root {
-     --cor-primaria: darkgreen;
-     --cor-secundaria: green;
-     --cor-fundo: white;
-     --cor-texto: #000;
- }
- *{
-     margin: 0;
-     padding: 0;
- }
- .formatacao{
-     font-family: 'Montserrat', sans-serif;
-     margin: 0;
-     padding: 0;
-     background-color: var(--cor-fundo);
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-.formatacao ul {
+
+body {
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+header {
+    background-color: #006400;
+    padding: 10px 20px;
+}
+
+.area-navegacao ul {
     list-style: none;
     display: flex;
-}
-.formatacao li{
-    text-decoration: none;
-    color: var(--cor-texto);
-    padding: 10px 15px;
-}
-.formatacao .icones {
-    display: flex;
-    gap: 10px;
-}
-.formatacao .icones a {
-    color: var(--cor-texto);
-    text-decoration: none;
-}
-.formatacao .icones a:hover {
-    color: var(--cor-primaria);
-}
-.formatacao .icones i {
-    font-size: 20px;
-}
-.formatacao .icones i:hover {
-    color: var(--cor-primaria);
-}
-.formatacao main {
-    padding: 20px;
-}
-.formatacao header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.formatacao nav {
-    display: flex;
-    justify-content: center;
     gap: 20px;
+}
+
+.area-navegacao a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.area-navegacao a:hover {
+    color: #FFD700; /* dourado para destaque */
+}
+
+h1 {
+    color: #228B22;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.form-cadastro {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.titulo-campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #006400;
+}
+
+.titulo-campo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #228B22;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px 5px;
+    transition: background-color 0.3s;
+}
+
+.botao:hover {
+    background-color: #006400;
 }

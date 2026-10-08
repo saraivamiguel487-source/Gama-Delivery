@@ -1,157 +1,85 @@
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 :root {
-  --cor-primaria: darkgreen;
-  --cor-secundaria: green;
-  --cor-fundo: white;
-  --cor-texto: #000;
+    --cor-primaria: darkgreen;   /* verde escuro */
+    --cor-secundaria: green;     /* verde claro */
+    --cor-fundo: #ffffff;        /* branco */
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
 }
 
-.formatacao, body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-}
-
-header {
-  text-align: center;
-  margin-bottom: 40px;
-  padding: 15px 0;
-}
-
-.area-navegacao {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.area-navegacao ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.icones {
-  color: var(--cor-texto);
-  text-decoration: none;
-  display: inline-block;
-  transition: color 0.2s ease-in-out;
-}
-
-.icones i {
-  font-size: 20px;
-}
-
-.icones:hover,
-.icones:hover i {
-  color: var(--cor-primaria) !important;
-}
-
+/* Área de login e cadastro */
+.area-login,
 .area-cadastro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 50vh;
-  padding: 0 20px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 40px auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+/* Títulos */
 .area-titulo h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-  color: var(--cor-primaria);
-  text-align: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.area-formulario {
-  width: 100%;
-  max-width: 400px; 
-  background-color: #fff;
-}
-
-.form-cadastro {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.area-acesso {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.titulo-campo {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
+/* Campos */
 .titulo-campo label {
-  font-size: 14px;
-  font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.titulo-campo input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  width: 100%;
-  outline: none;
-  transition: border-color 0.2s;
+.titulo-campo input,
+.titulo-campo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
-.titulo-campo input:focus {
-  border-color: var(--cor-primaria);
+/* Botões */
+#botao-entrar,
+#botao-cadastrar {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
-.area-botao {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
+#botao-entrar:hover,
+#botao-cadastrar:hover {
+    background-color: var(--cor-primaria);
 }
 
-.area-botao button {
-  background-color: var(--cor-primaria);
-  color: white;
-  border: none;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: background-color 0.2s ease;
-}
-
-.area-botao button:hover {
-  background-color: var(--cor-secundaria);
-}
-
+/* Links */
 .link-login {
-  color: var(--cor-texto);
-  font-size: 13px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 1.4;
+    display: block;
+    margin-top: 10px;
+    color: var(--cor-fundo);
+    text-align: center;
+    text-decoration: underline;
 }
 
 .link-login:hover {
-  text-decoration: underline;
-  color: var(--cor-secundaria);
+    color: #FFD700; /* dourado */
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .area-login,
+    .area-cadastro {
+        margin: 20px;
+        padding: 15px;
+    }
 }
