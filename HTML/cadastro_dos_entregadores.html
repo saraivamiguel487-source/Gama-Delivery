@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cadastro_dos_entregadores.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Cadastro dos entregadores do Gama Delivery</title>
 </head>
 
 <body class="formatacao">
     <header>
         <nav class="area-navegacao">
-            <!-- Corrigido: src preenchido com a logo padrão para evitar quebras em tela -->
             <img class="logo" src="logo.png" alt="logo do site" width="100px">
-<div class="area-botao">
-    <a href="comidas.html" class="botao">Procurar por comidas</a>
-    <a href="acompanhamentos_na_comida.html" class="botao">Procurar por acompanhamentos</a>
-    <a href="bebidas.html" class="botao">Procurar por bebidas</a>
-    <a href="login_dos_clientes.html" class="botao">Login</a>
-    <a href="cadastro_dos_clientes.html" class="botao">Cadastro</a>
-</div>
+            <div class="area-botao">
+                <a href="comidas.html" class="botao">Comidas</a>
+                <a href="acompanhamentos_na_comida.html" class="botao">Acompanhamentos</a>
+                <a href="bebidas.html" class="botao">Bebidas</a>
+                <a href="Index.html" class="botao">Voltar para a página inicial</a>
+            </div>
         </nav>
     </header>
     <main class="area-cadastro">
@@ -33,7 +33,7 @@
 
         <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-cadastrar">
-                
+
                 <!-- Nome e CPF -->
                 <div class="linha-dupla">
                     <div class="nome titulo-campo flex-3">
@@ -45,8 +45,6 @@
                         <input type="text" id="cpf" required placeholder="Digite o seu CPF.">
                     </div>
                 </div>
-
-                <!-- Credenciais de Acesso -->
                 <div class="linha-dupla">
                     <div class="email titulo-campo">
                         <label for="email">E-mail:</label>
@@ -59,8 +57,6 @@
                         <span id="erro-senha" class="erro-senha"></span>
                     </div>
                 </div>
-
-                <!-- Contato -->
                 <div class="linha-dupla">
                     <div class="ddd titulo-campo flex-1">
                         <label for="ddd">DDD:</label>
@@ -72,8 +68,16 @@
                         <input type="text" id="telefone" placeholder="Digite seu telefone." required>
                     </div>
                 </div>
-
-                <!-- Endereço: Rua e Número -->
+                <div class="linha-dupla">
+                    <div class="endereco titulo-campo flex-4">
+                        <label for="endereco">Endereço residencial:</label>
+                        <input type="text" id="endereco" placeholder="Digite seu endereço.">
+                    </div>
+                    <div class="numero titulo-campo flex-1">
+                        <label for="numero">Número:</label>
+                        <input type="number" id="numero" placeholder="000">
+                    </div>
+                    </div>
                 <div class="linha-dupla">
                     <div class="endereco titulo-campo flex-4">
                         <label for="endereco">Endereço residencial:</label>
@@ -84,8 +88,6 @@
                         <input type="number" id="numero" placeholder="000">
                     </div>
                 </div>
-
-                <!-- Endereço: Cidade e CEP -->
                 <div class="linha-dupla">
                     <div class="cidade titulo-campo">
                         <label for="cidade">Cidade:</label>
@@ -114,8 +116,6 @@
                         </select>
                     </div>
                 </div>
-
-                <!-- Botão de Ação e Redirecionamento -->
                 <div class="area-botao">
                     <button type="submit" id="botao-cadastrar">Cadastrar</button>
                     <a href="login_dos_entregadores.html" class="link-login">Já possui uma conta? Acesse agora!</a>
@@ -127,4 +127,5 @@
 
     <script src="js/login-cadastrar.js"></script>
 </body>
+
 </html>

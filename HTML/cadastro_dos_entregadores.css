@@ -1,7 +1,7 @@
 :root {
-    --cor-primaria: darkgreen;   /* verde escuro */
-    --cor-secundaria: green;     /* verde claro */
-    --cor-fundo: #ffffff;        /* branco */
+    --cor-primaria: darkgreen;  
+    --cor-secundaria: green;    
+    --cor-fundo: #ffffff;       
 }
 
 body {
@@ -9,7 +9,6 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Área de login e cadastro */
 .area-login,
 .area-cadastro {
     background-color: var(--cor-primaria);
@@ -21,13 +20,11 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Títulos */
 .area-titulo h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Campos */
 .titulo-campo label {
     display: block;
     margin-bottom: 5px;
@@ -43,7 +40,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Botões */
 #botao-entrar,
 #botao-cadastrar {
     background-color: var(--cor-secundaria);
@@ -62,7 +58,6 @@ body {
     background-color: var(--cor-primaria);
 }
 
-/* Links */
 .link-login {
     display: block;
     margin-top: 10px;
@@ -72,10 +67,9 @@ body {
 }
 
 .link-login:hover {
-    color: #FFD700; /* dourado */
+    color: #FFD700;
 }
 
-/* Responsividade */
 @media (max-width: 480px) {
     .area-login,
     .area-cadastro {
