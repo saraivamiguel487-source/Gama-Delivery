@@ -183,6 +183,21 @@ aside {
 .categoria:hover {
     background-color: #004d00;
 }
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.logo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.area-banner img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
 
 @media (max-width: 768px) {
     .area-navegacao {

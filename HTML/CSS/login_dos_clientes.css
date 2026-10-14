@@ -1,7 +1,8 @@
 :root {
-    --cor-primaria: darkgreen;  
-    --cor-secundaria: green;   
-    --cor-fundo: #ffffff;        
+    --cor-primaria: darkgreen; 
+    --cor-secundaria: green;  
+    --cor-fundo: #ffffff;      
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -23,7 +24,6 @@ body {
     text-align: center;
     margin-bottom: 20px;
 }
-
 .titulo-campo label {
     display: block;
     margin-bottom: 5px;
@@ -38,7 +38,6 @@ body {
     border-radius: 5px;
     margin-bottom: 15px;
 }
-
 #botao-entrar,
 #botao-cadastrar {
     background-color: var(--cor-secundaria);
@@ -57,6 +56,7 @@ body {
     background-color: var(--cor-primaria);
 }
 
+
 .link-login {
     display: block;
     margin-top: 10px;
@@ -68,6 +68,26 @@ body {
 .link-login:hover {
     color: #FFD700;
 }
+.area-banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.area-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.area-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.area-logo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
 @media (max-width: 480px) {
     .area-login,
@@ -75,5 +95,25 @@ body {
         margin: 20px;
         padding: 15px;
     }
+
+.area-banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.area-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+area-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.area-logo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 }

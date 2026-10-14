@@ -69,6 +69,26 @@ body {
 .link-login:hover {
     color: #FFD700;
 }
+.area-banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.area-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+area-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.area-logo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
 @media (max-width: 480px) {
     .area-login,
@@ -76,4 +96,24 @@ body {
         margin: 20px;
         padding: 15px;
     }
+    .area-banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.area-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.logo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 }
