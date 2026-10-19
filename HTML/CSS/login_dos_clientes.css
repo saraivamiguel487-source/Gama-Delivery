@@ -1,119 +1,92 @@
-:root {
-    --cor-primaria: darkgreen; 
-    --cor-secundaria: green;  
-    --cor-fundo: #ffffff;      
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f5f5f5;
-}
-
-.area-login,
-.area-cadastro {
-    background-color: var(--cor-primaria);
-    color: var(--cor-fundo);
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
+/* Container Geral do Login */
+.area-login {
+    max-width: 450px;
     margin: 40px auto;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.area-titulo {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .area-titulo h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.titulo-campo label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    font-size: 24px;
+    color: var(--cor-primaria);
+    font-weight: 700;
 }
 
-.titulo-campo input,
-.titulo-campo select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--cor-secundaria);
-    border-radius: 5px;
-    margin-bottom: 15px;
+/* Campos de Entrada */
+.titulo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
-#botao-entrar,
-#botao-cadastrar {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-fundo);
-    border: none;
-    padding: 10px 20px;
+
+.titulo-campo label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.titulo-campo input {
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.titulo-campo input:focus {
+    border-color: var(--cor-secundaria);
+    outline: none;
+}
+
+/* Mensagens de Erro dinâmicas do JavaScript */
+.erro-mensagem {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Área de Botões e Links */
+.area-form-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#botao-entrar {
+    padding: 12px;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
     font-weight: bold;
-    width: 100%;
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
-#botao-entrar:hover,
-#botao-cadastrar:hover {
-    background-color: var(--cor-primaria);
+#botao-entrar:hover {
+    background-color: var(--cor-secundaria);
 }
 
-
 .link-login {
-    display: block;
-    margin-top: 10px;
-    color: var(--cor-fundo);
-    text-align: center;
-    text-decoration: underline;
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
 .link-login:hover {
-    color: #FFD700;
-}
-.area-banner {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.area-banner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-.area-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.area-logo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-@media (max-width: 480px) {
-    .area-login,
-    .area-cadastro {
-        margin: 20px;
-        padding: 15px;
-    }
-
-.area-banner {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.area-banner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-area-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.area-logo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
+    color: var(--cor-secundaria);
+    text-decoration: underline;
 }

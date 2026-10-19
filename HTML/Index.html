@@ -5,23 +5,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gama Delivery</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        @import url('https://googleapis.com');
+
+        :root {
+            --cor-primaria: darkgreen;
+            --cor-secundaria: green;
+            --cor-fundo: white;
+            --cor-texto: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        /* Navegação Superior */
+        .area-navegacao {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--cor-secundaria);
+            padding: 10px 20px;
+        }
+
+        .area-navegacao a.botao {
+            color: var(--cor-fundo);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 10px;
+            padding: 5px 10px;
+        }
+
+        .area-navegacao a.botao:hover {
+            color: #ffc107; /* Destaque no hover */
+        }
+
+        /* Seção de Busca */
+        .area-busca-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .area-busca {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .area-busca input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid var(--cor-primaria);
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .area-busca button {
+            padding: 10px 20px;
+            background-color: var(--cor-primaria);
+            color: var(--cor-fundo);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .area-busca button:hover {
+            background-color: var(--cor-secundaria);
+        }
+
+        /* Banner Principal */
+        .area-banner img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #contactar {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #contactar__botao {
+            padding: 10px 20px;
+            background-color: var(--cor-secundaria);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #contactar__botao:hover {
+            background-color: var(--cor-primaria);
+        }
+
+        /* Seção Sobre */
+        .area-sobre {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .sobre {
+            flex: 1;
+        }
+
+        .foto {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Seção de Categorias */
+        .area-categorias {
+            background-color: var(--cor-primaria);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .area-categorias h2 {
+            color: var(--cor-fundo);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .categoria {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--cor-secundaria);
+            padding: 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .categoria i,
+        .categoria span {
+            color: var(--cor-fundo);
+            font-weight: bold;
+        }
+
+        .categoria i {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .categoria:hover {
+            background-color: #004d00;
+        }
+
+        /* Responsividade (Mobile e Tablet) */
+        @media (max-width: 768px) {
+            .area-navegacao {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .area-navegacao .area-botao {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .area-sobre {
+                flex-direction: column;
+            }
+
+            .categorias {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+
+            .area-busca input[type="text"] {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .categorias {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav class="area-navegacao">
-            <img class="logo" src="Gama_Delivery.jpg" alt="logo do site" width="100px">
+            <img class="logo" src="IMG/Gama_Delivery.jpg" alt="logo do site" width="100px">
             <div class="area-botao">
                 <a href="comidas.html" class="botao">Procurar por comidas</a>
                 <a href="acompanhamentos_na_comida.html" class="botao">Procurar por acompanhamentos</a>
                 <a href="bebidas.html" class="botao">Procurar por bebidas</a>
-                <a href="login_dos_clientes.html" class="botao">Login</a>
+                <a href="login_dos_clientes.html" class="botao">Login como clientes</a>
                 <a href="login_dos_entregadores.html" class="botao">Login como Entregador</a>
             </div>
         </nav>
@@ -30,12 +231,11 @@
     <main>
         <article class="area-banner" id="Home">
             <section id="banner">
-                <img src="Banner-Gama_Delivery.jpg" alt="Banner Principal" id="banner__image">
+                <img src="IMG/Banner-Gama_Delivery.jpg" alt="Banner Principal" width="100" height="100" id="banner__image">
             </section>
 
             <section id="contactar">
-                <h2 id="contactar__titulo">Contacte Entregadores, bons, pagos, profissionais, sucedidos e bem pagos na
-                    semana disponível</h2>
+                <h2 id="contactar__titulo">Contacte Entregadores qualificados e profissionais disponíveis nesta semana</h2>
                 <button id="contactar__botao">Contactar Entregadores</button>
             </section>
         </article>
@@ -44,8 +244,7 @@
             <section class="sobre">
                 <h1 class="sobre__titulo">Conheça o Gama Delivery</h1>
                 <p class="sobre__texto">Prezados e Prezadas clientes, para quem ainda não me conhece, sou o Gama
-                    Delivery, seu novo aplicativo e website criado especialmente para celular e computador. Eu tenho 18
-                    anos e, junto com meu melhor amigo e aliado de 28 anos, desenvolvemos esta plataforma para
+                    Delivery, seu novo aplicativo e website criado especialmente para celular e computador. Desenvolvemos esta plataforma para
                     navegadores como Microsoft Edge e Google Chrome, pensando em facilitar a vida de todos no Gama.
                     Nosso objetivo é simples: garantir que a comida, os acompanhamentos e as bebidas — caseiras ou não —
                     de restaurantes, cafeterias, padarias, pizzarias, hamburguerias, churrascarias e até dos quiosques
@@ -53,20 +252,13 @@
                     Seja você cliente ou entregador, basta se cadastrar no Gama Delivery. Caso já tenha login, não há
                     necessidade de se cadastrar novamente — é só entrar e aproveitar.
                     Estamos aqui para conectar sabores, pessoas e oportunidades, tornando cada entrega uma experiência
-                    prática e confiável.
-                    Bem-vindos ao Gama Delivery: o futuro das entregas no Gama começa agora.</p>
+                    prática e confiável.</p>
             </section>
             <section>
                 <img class="foto" src="GamaDelivery.jpg" alt="Sobre o Gama Delivery">
             </section>
         </article>
-        <article class="area-busca">
-            <h2 class="catalogo-titulo">Praças de Alimentação</h2>
-            <form class="busca">
-                <input type="text" class="busca__campo" placeholder="O que você procura hoje?">
-                <button class="busca__botao" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </article>
+
         <article class="area-categorias">
             <h2 class="categorias-titulo">Categorias</h2>
             <div class="categorias">
@@ -99,14 +291,11 @@
                     <span>Pastelarias</span>
                 </a>
                 <a href="quiosques.html" class="categoria">
-                    <i class="fa-solid fa-store"></i>
+                    <i class="fa-solid fa-shop"></i>
                     <span>Quiosques</span>
                 </a>
             </div>
         </article>
     </main>
-
-    <script src="js/busca.js"></script>
 </body>
-
 </html>

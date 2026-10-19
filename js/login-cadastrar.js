@@ -1,181 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const formLogin = document.getElementById("form-login");
-    const emailInput = document.getElementById("email");
-    const senhaInput = document.getElementById("senha");
-    const erroEmail = document.getElementById("erro-email");
-    const erroSenha = document.getElementById("erro-senha");
-
-    const definirStatus = (campo, valido, elementoErro = null, mensagemErro = "") => {
-        if (valido) {
-            campo.classList.remove("erro-input");
-            campo.classList.add("sucesso-input");
-            if (elementoErro) {
-                elementoErro.textContent = "";
-                elementoErro.style.display = "none";
-            }
-        } else {
-            campo.classList.remove("sucesso-input");
-            campo.classList.add("erro-input");
-            if (elementoErro) {
-                elementoErro.textContent = mensagemErro;
-                elementoErro.style.color = "#FF4444";
-                elementoErro.style.fontSize = "0.85rem";
-                elementoErro.style.marginTop = "4px";
-                elementoErro.style.display = "block";
-            }
-        }
-    };
-
-    // Validar Formato do E-mail
-    const validarEmail = () => {
-        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const valor = emailInput.value.trim();
-
-        if (valor === "") {
-            definirStatus(emailInput, false, erroEmail, "O e-mail é obrigatório.");
-            return false;
-        } else if (!regexEmail.test(valor)) {
-            definirStatus(emailInput, false, erroEmail, "Por favor, insira um e-mail válido.");
-            return false;
-        } else {
-            definirStatus(emailInput, true, erroEmail);
-            return true;
-        }
-    };
-
-    const validarSenha = () => {
-        const valor = senhaInput.value;
-
-        if (valor === "") {
-            definirStatus(senhaInput, false, erroSenha, "A senha é obrigatória.");
-            return false;
-        } else if (valor.length < 6) {
-            definirStatus(senhaInput, false, erroSenha, "A senha deve conter pelo menos 6 caracteres.");
-            return false;
-        } else {
-            definirStatus(senhaInput, true, erroSenha);
-            return true;
-        }
-    };
-    if (emailInput) emailInput.addEventListener("blur", validarEmail);
-    if (senhaInput) senhaInput.addEventListener("blur", validarSenha);
-
+document.addEventListener('DOMContentLoaded', () => {
+    // -------------------------------------------------------------
+    // BLOCO 1: Validação do Formulário de Login
+    // -------------------------------------------------------------
+    const formLogin = document.getElementById('form-login');
     if (formLogin) {
-        formLogin.addEventListener("submit", (e) => {
-            e.preventDefault(); 
+        formLogin.addEventListener('submit', (event) => {
+            let valido = true;
+            const email = document.getElementById('email');
+            const senha = document.getElementById('senha');
+            
+            limparErro(email, 'erro-email');
+            limparErro(senha, 'erro-senha');
 
-            const emailValido = validarEmail();
-            const senhavalido = validarSenha();
-
-            if (emailValido && senhavalido) {
-                alert("Login realizado com sucesso! Redirecionando...");
-                
-                formLogin.reset();
-                
-                emailInput.classList.remove("sucesso-input");
-                senhaInput.classList.remove("sucesso-input");
-            } else {
-                alert("Por favor, preencha as suas credenciais corretamente.");
+            if (!validarEmailRegEx(email.value.trim())) {
+                exibirErro(email, 'erro-email', 'Insira um e-mail válido.');
+                valido = false;
             }
+            if (senha.value.length < 6) {
+                exibirErro(senha, 'erro-senha', 'A senha deve conter ao menos 6 dígitos.');
+                valido = false;
+            }
+            if (!valido) event.preventDefault();
         });
     }
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const formLogin = document.getElementById("form-login");
-    const emailInput = document.getElementById("email");
-    const senhaInput = document.getElementById("senha");
-    const erroEmail = document.getElementById("erro-email");
-    const erroSenha = document.getElementById("erro-senha");
 
-    const definirStatus = (campo, valido, elementoErro = null, mensagemErro = "") => {
-        if (valido) {
-            campo.classList.remove("erro-input");
-            campo.classList.add("sucesso-input");
-            if (elementoErro) {
-                elementoErro.textContent = "";
-                elementoErro.style.display = "none";
+    // -------------------------------------------------------------
+    // BLOCO 2: Validação do Formulário de Cadastro
+    // -------------------------------------------------------------
+    const formCadastrar = document.getElementById('form-cadastrar');
+    if (formCadastrar) {
+        formCadastrar.addEventListener('submit', (event) => {
+            let valido = true;
+            
+            const nome = document.getElementById('nome');
+            const cpf = document.getElementById('CPF');
+            const email = document.getElementById('email');
+            const senha = document.getElementById('senha');
+            const ddd = document.getElementById('ddd');
+            const telefone = document.getElementById('telefone');
+            const cep = document.getElementById('cep');
+
+            // Limpa estados de erro anteriores
+            [nome, cpf, email, senha, ddd, telefone, cep].forEach(input => {
+                if(input) limparErro(input, `erro-${input.id.toLowerCase()}`);
+            });
+
+            // Validações individuais
+            if (nome.value.trim().split(' ').length < 2) {
+                exibirErro(nome, 'erro-nome', 'Insira seu nome completo.');
+                valido = false;
             }
-        } else {
-            campo.classList.remove("sucesso-input");
-            campo.classList.add("erro-input");
-            if (elementoErro) {
-                elementoErro.textContent = mensagemErro;
-                elementoErro.style.color = "#FF4444";
-                elementoErro.style.fontSize = "0.85rem";
-                elementoErro.style.marginTop = "4px";
-                elementoErro.style.display = "block";
+            if (cpf.value.replace(/\D/g, '').length !== 11) {
+                exibirErro(cpf, 'erro-cpf', 'O CPF deve possuir 11 números.');
+                valido = false;
             }
-        }
-    };
-
-    // Validar Formato do E-mail
-    const validarEmail = () => {
-        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const valor = emailInput.value.trim();
-
-        if (valor === "") {
-            definirStatus(emailInput, false, erroEmail, "O e-mail é obrigatório.");
-            return false;
-        } else if (!regexEmail.test(valor)) {
-            definirStatus(emailInput, false, erroEmail, "Por favor, insira um e-mail válido.");
-            return false;
-        } else {
-            definirStatus(emailInput, true, erroEmail);
-            return true;
-        }
-    };
-
-    const validarSenha = () => {
-        const valor = senhaInput.value;
-
-        if (valor === "") {
-            definirStatus(senhaInput, false, erroSenha, "A senha é obrigatória.");
-            return false;
-        } else if (valor.length < 6) {
-            definirStatus(senhaInput, false, erroSenha, "A senha deve conter pelo menos 6 caracteres.");
-            return false;
-        } else {
-            definirStatus(senhaInput, true, erroSenha);
-            return true;
-        }
-    };
-
-    if (emailInput) emailInput.addEventListener("blur", validarEmail);
-    if (senhaInput) senhaInput.addEventListener("blur", validarSenha);
-
-    if (formLogin) {
-        formLogin.addEventListener("submit", (e) => {
-            e.preventDefault(); 
-
-            const emailValido = validarEmail();
-            const senhaValido = validarSenha(); // AJUSTE: Corrigido camelCase (v maiúsculo)
-
-            if (emailValido && senhaValido) {
-                // CORREÇÃO: Cria um objeto mock de usuário para salvar na sessão
-                // Isso resolve o bloqueio de "Acesso Negado" que implementamos na tela do carrinho!
-                const dadosUsuario = {
-                    email: emailInput.value.trim(),
-                    nome: "Cliente", // Nome genérico simulado
-                    sobrenome: "Gama",
-                    telefone: "99999-9999",
-                    ddd: "61"
-                };
-
-                // Grava a credencial no localStorage para autenticar o usuário no ecossistema do site
-                localStorage.setItem('usuarioCadastro', JSON.stringify(dadosUsuario));
-
-                alert("Login realizado com sucesso! Redirecionando...");
-                
-                formLogin.reset();
-                
-                emailInput.classList.remove("sucesso-input");
-                senhaInput.classList.remove("sucesso-input");
-
-                // CORREÇÃO: Redireciona o usuário de verdade para a home após o login bem-sucedido
-                window.location.href = "index.html";
-            } else {
-                alert("Por favor, preencha as suas credenciais corretamente.");
+            if (!validarEmailRegEx(email.value.trim())) {
+                exibirErro(email, 'erro-email', 'Formato de e-mail inválido.');
+                valido = false;
             }
+            if (senha.value.length < 6) {
+                exibirErro(senha, 'erro-senha', 'Crie uma senha de no mínimo 6 caracteres.');
+                valido = false;
+            }
+            if (ddd.value.replace(/\D/g, '').length !== 2) {
+                exibirErro(ddd, 'erro-ddd', 'DDD inválido.');
+                valido = false;
+            }
+
+            if (!valido) event.preventDefault();
         });
+    }
+
+    // -------------------------------------------------------------
+    // Funções Auxiliares de Tratamento Visual
+    // -------------------------------------------------------------
+    function exibirErro(inputElement, idErroElemento, mensagem) {
+        const spanErro = document.getElementById(idErroElemento);
+        if (spanErro) {
+            spanErro.textContent = mensaje || mensagem;
+            spanErro.style.display = 'block';
+        }
+        inputElement.style.borderColor = '#dc3545';
+    }
+
+    function limparErro(inputElement, idErroElemento) {
+        const spanErro = document.getElementById(idErroElemento);
+        if (spanErro) {
+            spanErro.textContent = '';
+            spanErro.style.display = 'none';
+        }
+        inputElement.style.borderColor = '#ced4da';
+    }
+
+    function validarEmailRegEx(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+\$/.test(email);
     }
 });

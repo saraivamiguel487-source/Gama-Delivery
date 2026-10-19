@@ -1,119 +1,117 @@
-:root {
-    --cor-primaria: darkgreen;  
-    --cor-secundaria: green;   
-    --cor-fundo: #ffffff;        
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f5f5f5;
+/* Layout da Área de Login */
+.area-login {
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fcfcfd;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
 }
 
-.area-login,
-.area-cadastro {
-    background-color: var(--cor-primaria);
-    color: var(--cor-fundo);
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
-    margin: 40px auto;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+.area-titulo {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .area-titulo h1 {
-    text-align: center;
+    font-size: 24px;
+    color: var(--cor-primaria, darkgreen);
+    font-weight: 700;
+}
+
+/* Campos de entrada e Ícones integrados */
+.titulo-campo {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
 }
 
 .titulo-campo label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
 }
 
-.titulo-campo input,
-.titulo-campo select {
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.campo-icone {
+    position: absolute;
+    left: 12px;
+    color: #6c757d;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.titulo-campo input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid var(--cor-secundaria);
-    border-radius: 5px;
-    margin-bottom: 15px;
+    padding: 12px 12px 12px 40px; /* Espaço na esquerda para o ícone */
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-#botao-entrar,
-#botao-cadastrar {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-fundo);
+.titulo-campo input:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Customização das mensagens de erro */
+.erro-mensagem {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+/* Botões e Links */
+.area-form-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#botao-entrar {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-primaria, darkgreen);
+    color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
     font-weight: bold;
-    width: 100%;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
-#botao-entrar:hover,
-#botao-cadastrar:hover {
-    background-color: var(--cor-primaria);
+#botao-entrar:hover {
+    background-color: var(--cor-secundaria, green);
 }
 
 .link-login {
-    display: block;
-    margin-top: 10px;
-    color: var(--cor-fundo);
-    text-align: center;
-    text-decoration: underline;
+    font-size: 13px;
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
 }
 
 .link-login:hover {
-    color: #FFD700;
-}
-.area-banner {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.area-banner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-area-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.area-logo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    color: var(--cor-secundaria, green);
+    text-decoration: underline;
 }
 
-@media (max-width: 480px) {
-    .area-login,
-    .area-cadastro {
-        margin: 20px;
-        padding: 15px;
+/* Ajuste Responsivo para telas pequenas */
+@media (max-width: 576px) {
+    .area-login {
+        margin: 20px 15px;
+        padding: 20px;
     }
-}
-.area-banner {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.area-banner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-.logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.logo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
 }

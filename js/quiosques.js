@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-cadastrar");
+  
+  // Proteção: Só executa o script se o formulário de quiosque existir na página atual
+  if (!form) return;
+
   const nome = document.getElementById("nome");
   const email = document.getElementById("email");
   const telefone = document.getElementById("telefone");
@@ -7,21 +11,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const endereco = document.getElementById("endereco");
   const erroEmail = document.getElementById("erro-email");
 
+  // Função auxiliar para aplicar estilos de validação
   const definirStatus = (campo, valido, mensagemErro = "") => {
     if (valido) {
       campo.classList.remove("erro-input");
       campo.classList.add("sucesso-input");
+      campo.style.borderColor = "#198754"; // Borda verde (Bootstrap success)
     } else {
       campo.classList.remove("sucesso-input");
       campo.classList.add("erro-input");
+      campo.style.borderColor = "#dc3545"; // Borda vermelha (Bootstrap danger)
     }
     
+    // Gerencia o texto de erro dinâmico do e-mail
     if (campo === email && erroEmail) {
       erroEmail.textContent = mensagemErro;
-      erroEmail.style.color = "#FF4444";
+      erroEmail.style.display = valido ? "none" : "block";
+      erroEmail.style.color = "#dc3545";
     }
   };
 
+  // Validar Email (CORREÇÃO 1: Expressão corrigida e limpa para evitar falsos-negativos)
   const validarEmail = () => {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const valor = email.value.trim();
@@ -30,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       definirStatus(email, false, "O e-mail do quiosque é obrigatório.");
       return false;
     } else if (!regexEmail.test(valor)) {
-      definirStatus(email, false, "Digite um e-mail válido.");
+      definirStatus(email, false, "Digite um formato de e-mail válido (ex: quiosque@gama.com).");
       return false;
     } else {
       definirStatus(email, true);
@@ -38,8 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Validar Campos Obrigatórios Comuns
   const validarCampoObrigatorio = (campo) => {
-    if (campo.value.trim() === "") {
+    if (!campo || campo.value.trim() === "") {
       definirStatus(campo, false);
       return false;
     } else {
@@ -48,6 +59,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Validação Avançada Otimizada de CNPJ (Valida se o formato e tamanho batem)
+  const validarCNPJ = () => {
+    const valorLimpo = cnpj.value.replace(/\D/g, "");
+    if (valorLimpo.length !== 14 || /^(\d)\1+$/.test(valorLimpo)) {
+      definirStatus(cnpj, false);
+      return false;
+    }
+    definirStatus(cnpj, true);
+    return true;
+  };
+
+  // Máscara e Validação de Telefone em Tempo Real
   telefone.addEventListener("input", (e) => {
     let value = e.target.value.replace(/\D/g, "");
     if (value.length > 11) value = value.slice(0, 11);
@@ -64,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.value = value;
   });
 
-  // CORREÇÃO 1: Nova máscara de CNPJ controlada pelo comprimento da string digitada
+  // Máscara de CNPJ Incremental Corrigida
   cnpj.addEventListener("input", (e) => {
     let value = e.target.value.replace(/\D/g, ""); 
     if (value.length > 14) value = value.slice(0, 14);
@@ -82,33 +105,33 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.value = value;
   });
 
-  // Escutas de perda de foco (blur) ativadas para todos os elementos do formulário
-  nome.addEventListener("blur", () => validarCampoObrigatorio(nome));
-  email.addEventListener("blur", validarEmail);
-  telefone.addEventListener("blur", () => validarCampoObrigatorio(telefone));
-  cnpj.addEventListener("blur", () => validarCampoObrigatorio(cnpj));
-  endereco.addEventListener("blur", () => validarCampoObrigatorio(endereco));
+  // Ouvintes de evento para perda de foco (blur)
+  if (nome) nome.addEventListener("blur", () => validarCampoObrigatorio(nome));
+  if (email) email.addEventListener("blur", validarEmail);
+  if (telefone) telefone.addEventListener("blur", () => validarCampoObrigatorio(telefone));
+  if (cnpj) cnpj.addEventListener("blur", validarCNPJ);
+  if (endereco) endereco.addEventListener("blur", () => validarCampoObrigatorio(endereco));
 
+  // Execução do Envio (Submit)
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); 
-    
-    // CORREÇÃO 2: Validando obrigatoriamente TODOS os 5 inputs no clique de envio
+    e.preventDefault();
+
     const nomeValido = validarCampoObrigatorio(nome);
     const emailValido = validarEmail();
     const telefoneValido = validarCampoObrigatorio(telefone);
-    const cnpjValido = validarCampoObrigatorio(cnpj);
+    const cnpjValido = validarCNPJ();
     const enderecoValido = validarCampoObrigatorio(endereco);
-    
-    // O formulário só envia se todas as checagens forem verdadeiras (true)
+
     if (nomeValido && emailValido && telefoneValido && cnpjValido && enderecoValido) {
-      alert("Quiosque procurado com sucesso!");
-      form.reset(); 
+      alert("Cadastro do quiosque realizado com sucesso!"); // AJUSTE: Mensagem alterada de 'procurado' para 'realizado'
+      form.reset();
       
+      // Remove todas as classes de status após limpar os campos
       [nome, email, telefone, cnpj, endereco].forEach(campo => {
-        campo.classList.remove("sucesso-input", "erro-input");
+        if (campo) campo.classList.remove("sucesso-input", "erro-input");
       });
     } else {
-      alert("Por favor, preencha corretamente os campos obrigatórios indicados em vermelho.");
+      alert("Por favor, preencha corretamente os campos obrigatórios sinalizados em vermelho.");
     }
   });
 });

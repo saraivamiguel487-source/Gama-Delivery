@@ -17,7 +17,9 @@
 <body>
     <header>
         <nav class="area-navegacao">
-            <div class="area-botao">
+            <img class="logo" src="IMG/Gama_Delivery.jpg" alt="logo do site" width="100px">
+            <!-- Corrigido: links agrupados na classe nav-botoes para evitar conflito de CSS -->
+            <div class="nav-botoes">
                 <a href="comidas.html" class="botao">Comidas</a>
                 <a href="acompanhamentos_na_comida.html" class="botao">Acompanhamentos</a>
                 <a href="bebidas.html" class="botao">Bebidas</a>
@@ -25,40 +27,46 @@
             </div>
         </nav>
     </header>
+    
     <article class="area-banner" id="Home">
         <section id="banner">
-            <img src="Banner-Gama_Delivery.jpg" alt="Banner Principal" id="banner__image">
+            <img src="IMG/Banner-Gama_Delivery.jpg" alt="Banner Principal" id="banner__image">
         </section>
     </article>
-    <!-- Ajustado: alterado de area-cadastro para area-login para manter a semântica -->
+    
     <main class="area-login">
         <section class="area-titulo">
             <h1>Login do Gama Delivery</h1>
         </section>
 
         <section class="area-formulario">
-            <form action="#" class="form-login" id="form-logar">
+            <!-- Corrigido: ID alterado para form-login para bater com o JavaScript validador -->
+            <form action="#" class="form-login" id="form-login">
                 <div class="area-acesso">
                     <div class="email titulo-campo">
                         <label for="email">E-mail:</label>
                         <input type="email" id="email" placeholder="digite o seu e-mail" required>
+                        <!-- Adicionado: Elemento alvo para exibição de erros do script -->
+                        <span id="erro-email" class="erro-mensagem" style="display: none;"></span>
                     </div>
                     <div class="senha titulo-campo">
                         <label for="senha">Senha:</label>
                         <input type="password" id="senha" placeholder="······" required>
+                        <!-- Adicionado: Elemento alvo para exibição de erros do script -->
+                        <span id="erro-senha" class="erro-mensagem" style="display: none;"></span>
                     </div>
                 </div>
 
-                <div class="area-botao">
-                    <!-- Ajustado: alterado id de botao-cadastrar para botao-entrar -->
+                <div class="area-form-botoes">
                     <button type="submit" id="botao-entrar">Entrar</button>
                     <a href="recuperar_senha.html" class="link-login">Esqueceu a sua senha? Clique aqui!</a>
-                    <a href="Cadastro_dos_clientes.html" class="link-login">Ainda não possui uma conta? Clique aqui para
-                        cadastrar-se!</a>
+                    <a href="Cadastro_dos_clientes.html" class="link-login">Ainda não possui uma conta? Clique aqui para cadastrar-se!</a>
                 </div>
             </form>
         </section>
     </main>
+
+    <script src="js/login-cadastrar.js"></script>
 </body>
 
 </html>

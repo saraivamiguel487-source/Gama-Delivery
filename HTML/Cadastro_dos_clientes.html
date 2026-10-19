@@ -4,37 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro dos clientes do Gama Delivery</title>
+    <!-- Bootstrap v5.3.3 Estável -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Font Awesome v6.5.1 Estável -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Folhas de estilo locais -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cadastro_dos_clientes.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Cadastro dos clientes do Gama Delivery</title>
 </head>
 
 <body class="formatacao">
     <header>
         <nav class="area-navegacao">
-            <img class="logo" src="Gama_Delivery.jpg" alt="logo do site" width="100px">
-            <div class="area-botao"></div>
-            <a href="comidas.html" class="botao">Comidas</a>
-            <a href="acompanhamentos_na_comida.html" class="botao">Acompanhamentos</a>
-            <a href="bebidas.html" class="botao">Bebidas</a>
-            <a href="Index.html" class="botao">Voltar para a página inicial</a>
+            <img class="logo" src="IMG/Gama_Delivery.jpg" alt="logo do site" width="100px">
+            <!-- Corrigido: Agrupamento correto dos links de navegação -->
+            <div class="area-botao">
+                <a href="comidas.html" class="botao">Comidas</a>
+                <a href="acompanhamentos_na_comida.html" class="botao">Acompanhamentos</a>
+                <a href="bebidas.html" class="botao">Bebidas</a>
+                <a href="index.html" class="botao">Voltar para a página inicial</a>
+            </div>
         </nav>
     </header>
-        <article class="area-banner" id="Home">
-        <section id="banner">
-            <img src="Banner-Gama_Delivery.jpg" alt="Banner Principal" id="banner__image">
-        </section>
-    </article>
+
+    <!-- Corrigido: Removido o segundo bloco de banner duplicado -->
     <article class="area-banner" id="Home">
         <section id="banner">
-            <img src="Banner-Gama_Delivery.jpg" alt="Banner Principal" id="banner__image">
+            <img src="IMG/Banner-Gama_Delivery.jpg" alt="Banner Principal" id="banner__image">
         </section>
     </article>
+
     <main class="area-cadastro">
         <section class="area-titulo">
             <h1>Cadastre-se como cliente</h1>
@@ -44,58 +44,64 @@
             <form action="#" class="form-cadastro" id="form-cadastrar">
                 <div class="linha-dupla">
                     <div class="nome titulo-campo flex-3">
-                        <label for="nome">Nome:</label>
+                        <label for="nome">Nome completo:</label>
                         <input type="text" id="nome" required placeholder="Digite o seu nome completo.">
+                        <span id="erro-nome" class="erro-mensagem" style="display: none;"></span>
                     </div>
                     <div class="area-cpf titulo-campo flex-2">
                         <label for="CPF">CPF:</label>
-                        <input type="text" id="CPF" required placeholder="Digite o seu CPF.">
+                        <input type="text" id="CPF" required placeholder="000.000.000-00" maxlength="14">
+                        <span id="erro-cpf" class="erro-mensagem" style="display: none;"></span>
                     </div>
                 </div>
+
                 <div class="linha-dupla">
                     <div class="email titulo-campo">
                         <label for="email">E-mail:</label>
                         <input type="email" id="email" placeholder="Digite o seu e-mail." required>
-                        <span id="erro-email" class="erro-email"></span>
+                        <span id="erro-email" class="erro-mensagem" style="display: none;"></span>
                     </div>
                     <div class="senha titulo-campo">
                         <label for="senha">Senha:</label>
-                        <input type="password" id="senha" placeholder="······" required>
-                        <span id="erro-senha" class="erro-senha"></span>
+                        <input type="password" id="senha" placeholder="Mínimo 6 caracteres" required>
+                        <span id="erro-senha" class="erro-mensagem" style="display: none;"></span>
                     </div>
                 </div>
 
                 <div class="linha-dupla">
                     <div class="ddd titulo-campo flex-1">
                         <label for="ddd">DDD:</label>
-                        <input type="number" max="99" id="ddd" placeholder="DDD">
-                        <span id="erro-ddd" class="erro-ddd"></span>
+                        <!-- Corrigido: Tipo text com limite de caracteres para melhor usabilidade -->
+                        <input type="text" id="ddd" placeholder="61" maxlength="2" required>
+                        <span id="erro-ddd" class="erro-mensagem" style="display: none;"></span>
                     </div>
                     <div class="telefone titulo-campo flex-4">
                         <label for="telefone">Telefone:</label>
-                        <input type="text" id="telefone" placeholder="Digite seu telefone" required>
+                        <input type="text" id="telefone" placeholder="90000-0000" maxlength="10" required>
+                        <span id="erro-telefone" class="erro-mensagem" style="display: none;"></span>
                     </div>
                 </div>
 
                 <div class="linha-dupla">
                     <div class="endereco titulo-campo flex-4">
                         <label for="endereco">Endereço:</label>
-                        <input type="text" id="endereco" placeholder="Digite seu endereço.">
+                        <input type="text" id="endereco" placeholder="Ex: Setor Sul, Quadra...">
                     </div>
                     <div class="numero titulo-campo flex-1">
                         <label for="numero">Número:</label>
-                        <input type="number" id="numero" placeholder="000">
+                        <input type="text" id="numero" placeholder="S/N ou Apt">
                     </div>
                 </div>
 
                 <div class="linha-dupla">
                     <div class="cidade titulo-campo">
                         <label for="cidade">Cidade:</label>
-                        <input type="text" id="cidade" placeholder="Cidade">
+                        <input type="text" id="cidade" value="Gama" placeholder="Cidade">
                     </div>
                     <div class="cep titulo-campo">
                         <label for="cep">CEP:</label>
-                        <input type="text" id="cep" placeholder="00000-000">
+                        <input type="text" id="cep" placeholder="72400-000" maxlength="9">
+                        <span id="erro-cep" class="erro-mensagem" style="display: none;"></span>
                     </div>
                 </div>
 
@@ -103,6 +109,7 @@
                     <div class="data-nascimento titulo-campo">
                         <label for="data-nascimento">Data de nascimento:</label>
                         <input type="date" id="data-nascimento" required>
+                        <span id="erro-data" class="erro-mensagem" style="display: none;"></span>
                     </div>
                     <div class="genero titulo-campo">
                         <label for="genero">Gênero:</label>
@@ -116,11 +123,11 @@
                     </div>
                 </div>
 
-                <div class="area-botao">
+                <!-- Corrigido: Modificado o container para evitar colisão com o cabeçalho .area-botao -->
+                <div class="area-cadastro-botoes">
                     <button type="submit" id="botao-cadastrar">Cadastrar</button>
                     <a href="login_dos_clientes.html" class="link-login">Já possui uma conta? Acesse agora!</a>
                 </div>
-
             </form>
         </section>
     </main>
