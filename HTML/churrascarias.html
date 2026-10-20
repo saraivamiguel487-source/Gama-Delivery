@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procurar Restaurante - Gama Delivery</title>
+    <title>Procurar Churrascaria - Gama Delivery</title>
     <!-- Corrigido: Links de CDN completos para o Bootstrap e Font Awesome -->
-    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link href="https://jsdelivr.net" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cloudflare.com"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/churrascarias.css">
 </head>
 
@@ -18,12 +21,12 @@
             <img class="logo" src="IMG/Gama_Delivery.jpg" alt="logo do site" width="100px">
             <!-- Corrigido: Classe alterada para nav-botoes para isolar do formulário -->
             <div class="nav-botoes">
-                <a href="index.html" class="botao">Voltar para a página inicial</a>
-                <a href="comidas.html" class="botao">Comidas</a>
-                <a href="acompanhamentos_na_comida.html" class="botao">Acompanhamentos</a>
-                <a href="bebidas.html" class="botao">Bebidas</a>
-                <a href="login_dos_clientes.html" class="botao">Login dos Clientes</a>
-                <a href="login_dos_entregadores.html" class="botao">Login dos Entregadores</a>
+                <ul>
+                    <li><a href="index.html" class="botao">Voltar para a página inicial</a></li>
+                    <li><a href="carrinho.html" class="botao">Carrinho</a></li>
+                    <li><a href="login_dos_clientes.html" class="botao">Login dos Clientes</a></li>
+                    <li><a href="login_dos_entregadores.html" class="botao">Login dos Entregadores</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -42,7 +45,7 @@
 
         <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-procurar-churrascaria">
-                
+
                 <!-- Linha 1: Nome e CNPJ -->
                 <div class="linha-dupla">
                     <div class="nome titulo-campo flex-3">

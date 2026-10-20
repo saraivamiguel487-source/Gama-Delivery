@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-primaria: darkgreen;
+    --cor-secundaria: green;
+    --cor-fundo: white;
+    --cor-texto: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Adicionado para evitar que o padding quebre layouts responsivos */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+main {
+    padding: 20px;
+}
+
+/* Navegação Superior */
+.area-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    padding: 10px 20px;
+}
+
+.area-navegacao a {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.area-navegacao a:hover {
+    color: var(--cor-primaria);
+}
+
+
+/* Banner Principal */
+.area-banner img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Seção de Categorias */
+.area-categorias {
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.area-categorias h2 {
+    color: var(--cor-fundo);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.categoria i,
+.categoria span {
+    color: var(--cor-fundo);
+    font-weight: bold;
+}
+
+.categoria:hover {
+    background-color: #004d00;
+}
+
+@media (max-width: 480px) {
+    .categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .categoria {
+        padding: 10px;
+    }
+}

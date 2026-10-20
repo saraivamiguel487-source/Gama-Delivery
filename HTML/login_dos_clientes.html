@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="login_dos_clientes.css">
+    <link rel="stylesheet" href="CSS/login_dos_clientes.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Login dos clientes do Gama Delivery</title>
+    <title>Login dos clientes - Gama Delivery</title>
 </head>
 
 <body>
@@ -20,23 +20,23 @@
             <img class="logo" src="IMG/Gama_Delivery.jpg" alt="logo do site" width="100px">
             <!-- Corrigido: links agrupados na classe nav-botoes para evitar conflito de CSS -->
             <div class="nav-botoes">
-                <a href="comidas.html" class="botao">Comidas</a>
-                <a href="acompanhamentos_na_comida.html" class="botao">Acompanhamentos</a>
-                <a href="bebidas.html" class="botao">Bebidas</a>
-                <a href="index.html" class="botao">Voltar para a página inicial</a>
+                <ul>
+                    <li><a href="index.html" class="botao">Voltar para a página inicial</a></li>
+                    <li><a href="carrinho.html" class="botao">Carrinho</a></li>
+                </ul>
             </div>
         </nav>
     </header>
-    
+
     <article class="area-banner" id="Home">
         <section id="banner">
             <img src="IMG/Banner-Gama_Delivery.jpg" alt="Banner Principal" id="banner__image">
         </section>
     </article>
-    
+
     <main class="area-login">
         <section class="area-titulo">
-            <h1>Login do Gama Delivery</h1>
+            <h1>Login dos clientes do Gama Delivery</h1>
         </section>
 
         <section class="area-formulario">
@@ -60,7 +60,8 @@
                 <div class="area-form-botoes">
                     <button type="submit" id="botao-entrar">Entrar</button>
                     <a href="recuperar_senha.html" class="link-login">Esqueceu a sua senha? Clique aqui!</a>
-                    <a href="Cadastro_dos_clientes.html" class="link-login">Ainda não possui uma conta? Clique aqui para cadastrar-se!</a>
+                    <a href="Cadastro_dos_clientes.html" class="link-login">Ainda não possui uma conta? Clique aqui para
+                        cadastrar-se!</a>
                 </div>
             </form>
         </section>

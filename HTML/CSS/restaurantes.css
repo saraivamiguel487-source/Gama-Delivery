@@ -140,6 +140,45 @@
     font-size: 18px;
     vertical-align: middle;
 }
+.area-categorias {
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.area-categorias h2 {
+    color: var(--cor-fundo);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.categoria i,
+.categoria span {
+    color: var(--cor-fundo);
+    font-weight: bold;
+}
+
+.categoria:hover {
+    background-color: #004d00;
+}
+
 
 /* ==========================================================================
    Ajustes de Responsividade (Mobile)

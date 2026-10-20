@@ -15,7 +15,7 @@
     max-width: 750px;
     margin: 40px auto;
     padding: 35px;
-    background-color: var(--gama-branco-puro);
+    background-color: var(--cor-primaria);
     border: 2px solid #e1e6e1;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 77, 26, 0.06); /* Sombra sutil esverdeada */
@@ -24,13 +24,13 @@
 .area-titulo {
     text-align: center;
     margin-bottom: 30px;
-    border-bottom: 3px solid var(--gama-verde-escuro);
+    border-bottom: 3px solid var(--cor-fundo);
     padding-bottom: 15px;
 }
 
 .area-titulo h1 {
     font-size: 26px;
-    color: var(--gama-verde-escuro);
+    color: var(--cor-fundo);
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -61,7 +61,7 @@
     font-weight: 700;
     margin-bottom: 8px;
     font-size: 14px;
-    color: var(--gama-verde-escuro); /* Labels em verde escuro */
+    color: var(--cor-fundo); /* Labels em verde escuro */
 }
 
 .titulo-campo input {
@@ -76,7 +76,7 @@
 
 /* Foco do input com a cor do Gama */
 .titulo-campo input:focus {
-    border-color: var(--gama-verde-vivo);
+    border-color: var(--cor-secundaria);
     box-shadow: 0 0 0 0.25rem rgba(0, 128, 43, 0.2);
 }
 
@@ -112,23 +112,23 @@
     display: inline-block;
     width: 100%;
     padding: 14px;
-    background-color: var(--gama-verde-escuro);
-    color: var(--gama-branco-puro) !important; /* Texto estritamente branco */
+    background-color: var(--cor-fundo);
+    color: var(--gama-cor-fundo) !important; /* Texto estritamente branco */
     text-decoration: none !important;
     text-align: center;
     font-size: 16px;
     font-weight: 700;
     border-radius: 6px;
-    border: 1px solid var(--gama-verde-escuro);
+    border: 1px solid var(--cor-primaria);
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 
 /* Efeito de Hover invertendo ou clareando para o verde vivo */
 .link-botao-procurar:hover {
-    background-color: var(--gama-verde-vivo);
-    border-color: var(--gama-verde-vivo);
-    color: var(--gama-branco-puro) !important;
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-secundaria);
+    color: var(--cor-fundo) !important;
     transform: translateY(-1px);
 }
 
@@ -140,6 +140,45 @@
     font-size: 18px;
     vertical-align: middle;
 }
+.area-categorias {
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.area-categorias h2 {
+    color: var(--cor-fundo);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.categoria i,
+.categoria span {
+    color: var(--cor-fundo);
+    font-weight: bold;
+}
+
+.categoria:hover {
+    background-color: #004d00;
+}
+
 
 /* ==========================================================================
    Ajustes de Responsividade (Mobile)

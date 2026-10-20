@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procurar Restaurante - Gama Delivery</title>
+    <title>Procurar Cafateria - Gama Delivery</title>
     <!-- CORRIGIDO: Link estável do Bootstrap v5.3.3 -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <!-- CORRIGIDO: Link estável do Font Awesome v6.5.1 -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <!-- Folhas de estilo locais -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/cafeterias.css">
 </head>
 
@@ -19,12 +20,12 @@
             <img class="logo" src="IMG/Gama_Delivery.jpg" alt="logo do site" width="100px">
             <!-- Corrigido: Classe alterada para nav-botoes para isolar do formulário -->
             <div class="nav-botoes">
-                <a href="index.html" class="botao">Voltar para a página inicial</a>
-                <a href="comidas.html" class="botao">Comidas</a>
-                <a href="acompanhamentos_na_comida.html" class="botao">Acompanhamentos</a>
-                <a href="bebidas.html" class="botao">Bebidas</a>
-                <a href="login_dos_clientes.html" class="botao">Login dos Clientes</a>
-                <a href="login_dos_entregadores.html" class="botao">Login dos Entregadores</a>
+                <ul>
+                    <li><a href="index.html" class="botao">Voltar para a página inicial</a></li>
+                    <li><a href="carrinho.html" class="botao">Carrinho</a></li>
+                    <li><a href="login_dos_clientes.html" class="botao">Login dos Clientes</a></li>
+                    <li><a href="login_dos_entregadores.html" class="botao">Login dos Entregadores</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -43,7 +44,7 @@
 
         <section class="area-formulario">
             <form action="#" class="form-cadastro" id="form-procurar-cafeteria">
-                
+
                 <!-- Linha 1: Nome e CNPJ -->
                 <div class="linha-dupla">
                     <div class="nome titulo-campo flex-3">
